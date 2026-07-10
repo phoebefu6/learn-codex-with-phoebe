@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 6 · Power moves: automation, cloud, and beyond - learn codex with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-codex-with-phoebe</a> / Session 6 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe · Session 6 of 6</div>
+    <h1>Power moves: <span class="accent">automation, cloud, and beyond</span></h1>
+    <p class="sub">Your site is live. The finale is about leverage: making Codex work while you're not at the keyboard - scripted one-shots, cloud tasks that run while your laptop sleeps, and the connections that make it all durable.</p>
+    <div class="chip-row">
+      <span class="chip level">🔴 Hardest</span>
+      <span class="chip audience">Builders</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:4">3-16 · exec &amp; scripts</span>
+      <span class="a3" style="flex:5">16-31 · Codex cloud</span>
+      <span class="a4" style="flex:4">31-45 · Connections &amp; wrap</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>The site works. Now make it work without you</h2>
+    </div>
+    <p class="lede">Five sessions ago you installed a CLI. Now there's a live website on the internet with your name on it, an AGENTS.md that encodes your standards, skills that encode your taste, and a review habit that catches trouble before it ships. This last session hands you the multiplier: Codex in scripts, Codex in the cloud, and the routine that keeps your site healthy in ten minutes a week. Everything until now was you driving Codex. Today, Codex drives while you watch - or sleep.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR website</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A working <code>codex exec</code> health check for your live site, one cloud task delegated and merged, a weekly GitHub Action written and committed, and a ten-minute maintenance playbook. That's the whole course, closed with a bow - and the habits are yours for whatever you build next.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: CODEX EXEC ============ -->
+  <section class="section" id="codex-exec">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers CLI developer commands / exec</span>
+      <h2>codex exec - Codex in scripts <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Everything so far has been a conversation. <code>codex exec</code> is a sentence: one prompt in, work done, output back, no back-and-forth. That single change makes Codex scriptable - which means cron jobs, CI pipelines, and any maintenance task you'd rather never do by hand again.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>One prompt, no conversation<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Interactive <code>codex</code> is for building - you steer, it works, you iterate. <code>codex exec</code> is for repeating: the task is fully specified up front, Codex runs it to completion, and the result lands in your terminal (or a log file, or a CI report). If you'd run the same prompt every week, it belongs in exec.</p>
+        <div class="prompt-box good"><span class="label">★ Three exec one-shots for your live site</span># the weekly classic - find what quietly broke
+codex exec "Check every internal and external link in this site's HTML files and report any broken ones as a markdown list with the file and line where each appears."
+
+# keep the site fast
+codex exec "Audit all images in this repo: list any over 300KB with their dimensions, and suggest the resize or format change for each. Report only - change nothing."
+
+# keep the site professional
+codex exec "Spellcheck the visible text of every HTML page. Ignore code blocks and proper nouns from AGENTS.md. Output a table: file, typo, suggested fix."</div>
+        <ul>
+          <li><strong>Where it shines:</strong> CI checks, cron schedules, pre-deploy gates, and any "look at everything and report" sweep - the boring, repeatable maintenance that never gets done manually.</li>
+          <li><strong>The exec habit:</strong> say "report only, change nothing" when you want an audit. Unattended runs deserve tighter boundaries than conversations - you're not there to catch an enthusiastic rewrite.</li>
+          <li><strong>Your standards still apply:</strong> exec reads the same AGENTS.md and skills as interactive mode. The taste you encoded in Session 3 rides along into every script.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Level up: a GitHub Action that runs your checks weekly<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The final form of exec thinking: don't run the health check yourself - have GitHub run it every Monday. And in the spirit of this whole course, you don't write the Action file. Codex does.</p>
+        <div class="prompt-box good"><span class="label">★ Ask Codex to write the Action</span>Goal: a GitHub Actions workflow that runs a weekly health check on this site.
+
+Context: this repo deploys to GitHub Pages. I care about broken links and files that accidentally get huge.
+
+Output: .github/workflows/site-health.yml that runs every Monday morning, checks all internal links and flags any file over 500KB, and opens an issue in this repo if anything fails. Add a short comment above each step explaining what it does.
+
+Boundaries: use only free, standard GitHub Actions features. Don't touch any other file. Explain how I enable and test it before I commit.</div>
+        <div class="callout tip">
+          <strong>Treat the Action as a stretch goal</strong>
+          Writing and committing the workflow file is today's job - Codex does it in one pass, and Demo 3 walks it. Actually enabling and watching it run needs GitHub setup time we don't have live, so that part is homework. The skill being taught is bigger than the file: any chore you can describe is a chore you can schedule.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>exec vs interactive - the decision in one table<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Situation</th><th>Reach for</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Building something new, taste involved</td><td>Interactive <code>codex</code></td><td>You need to see, react, and steer mid-flight</td></tr>
+            <tr><td>Same check, every week</td><td><code>codex exec</code> (or cron it)</td><td>Fully specified up front - no steering needed</td></tr>
+            <tr><td>Gate in a CI pipeline</td><td><code>codex exec</code></td><td>Machines call it; the output is the artifact</td></tr>
+            <tr><td>Debugging something weird</td><td>Interactive</td><td>Weird needs conversation and reproduction steps</td></tr>
+            <tr><td>Audit-and-report sweep across the repo</td><td><code>codex exec</code>, report-only boundary</td><td>Long, boring, and perfectly repeatable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: CODEX CLOUD ============ -->
+  <section class="section" id="codex-cloud">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the Codex cloud docs</span>
+      <h2>Codex cloud - delegate and walk away <span class="tag concept">7 min live</span></h2>
+    </div>
+    <p class="lede">Everything until now ran on your machine, while you watched. A cloud task runs on OpenAI's machines, on a copy of your repo, while you do literally anything else - and comes back as a diff you review and merge. It's the difference between using a tool and having a teammate.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Codex cloud flow: you hand off a task, a cloud environment works on your repo, a PR or diff comes back for your review">
+        <style>
+          .cdT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .cdS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .cdD { font: 700 15px Inter, sans-serif; fill: #202123; }
+          .cdE { font: 400 12px Inter, sans-serif; fill: #202123; opacity: .8; }
+          .cdX { font: 400 12.5px Inter, sans-serif; fill: #6E6E80; }
+          .cdA { stroke: #C5C5D2; stroke-width: 2; fill: none; marker-end: url(#cdAh); }
+        </style>
+        <defs>
+          <marker id="cdAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="25" y="70" width="180" height="70" rx="12" fill="#0A6B54"/>
+        <text class="cdT" x="43" y="99">🧑 You</text>
+        <text class="cdS" x="43" y="120">CLI, app, or phone</text>
+        <rect x="245" y="70" width="180" height="70" rx="12" fill="#10A37F"/>
+        <text class="cdT" x="263" y="99">📨 The task</text>
+        <text class="cdS" x="263" y="120">one GCOB ask, handed off</text>
+        <rect x="465" y="70" width="180" height="70" rx="12" fill="#2FBF96"/>
+        <text class="cdT" x="483" y="99">☁️ Cloud env works</text>
+        <text class="cdS" x="483" y="120">your repo, your AGENTS.md</text>
+        <rect x="685" y="70" width="170" height="70" rx="12" fill="#7DDFC3"/>
+        <text class="cdD" x="703" y="99">📬 PR / diff back</text>
+        <text class="cdE" x="703" y="120">you review, then merge</text>
+        <line class="cdA" x1="205" y1="105" x2="238" y2="105"/>
+        <line class="cdA" x1="425" y1="105" x2="458" y2="105"/>
+        <line class="cdA" x1="645" y1="105" x2="678" y2="105"/>
+        <rect x="465" y="170" width="12" height="12" fill="#D97706"/>
+        <text class="cdX" x="485" y="181">while this box runs, your laptop can be closed - or running two more tasks in parallel</text>
+        <text class="cdX" x="25" y="225">The loop is unchanged from Session 1 - goal in, verified work out. Only the machine doing the labor moved.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the cloud handoff: you → task → cloud environment → reviewed diff</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What a cloud task is, and the three doors in<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You hand Codex a task; it spins up a cloud environment with your repo, works the same agent loop you know - read, plan, act, verify - and returns a diff or pull request for review. Your machine contributes nothing but the ask.</p>
+        <ul>
+          <li><strong>From the CLI:</strong> send a task to the cloud right from where you already work - build locally, delegate remotely, same session.</li>
+          <li><strong>From the app:</strong> kick off and monitor tasks from the ChatGPT desktop app's Codex view.</li>
+          <li><strong>From your phone:</strong> the one that changes behavior - remember "the showcase page needs a filter" on the train, delegate it from your pocket, review the diff after dinner.</li>
+          <li><strong>Parallel is the superpower:</strong> fire three tasks at once - three hero layouts, three ways to structure the ideas page - and pick the winner. Sequential you becomes parallel you.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Cloud or local? The decision that matters<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Go cloud when...</th><th>Stay local when...</th></tr></thead>
+          <tbody>
+            <tr><td>The task is long and self-contained ("add a 404 page matching the design system")</td><td>You're iterating on taste and want the tight see-react loop</td></tr>
+            <tr><td>You want parallel experiments racing each other</td><td>The task needs something only your machine has</td></tr>
+            <tr><td>You're away from your machine (or want to be)</td><td>You're learning - watching the loop is the lesson</td></tr>
+            <tr><td>The change is well-specified and reviewable as a diff</td><td>The spec is fuzzy and needs conversation to find</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>Plus plan note</strong>
+          Cloud tasks and code reviews draw from the same 5-hour usage window as your regular Codex messages - one pool, not three. Firing five parallel cloud tasks is spending five tasks' worth of that window at once. Fine when deliberate; surprising when not.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: CONNECTIONS ============ -->
+  <section class="section" id="connections">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers MCP overview + session continuity</span>
+      <h2>Connections and continuity <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Three quieter features that make the loud ones durable: MCP plugs external tools into Codex, <code>codex resume</code> keeps long projects coherent, and plugins let your skills travel. Then it all folds into one weekly routine.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>MCP - giving Codex more hands<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>MCP (Model Context Protocol) is an open standard for connecting agents to external tools and data - and Codex speaks it. Add a server to your Codex config and the agent gains that server's abilities: a filesystem server reaches folders beyond your project, an API server queries live services, a database server reads real data. Same protocol other agents use, so the ecosystem is shared.</p>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>A practical first server:</strong> connect a filesystem MCP server pointed at your notes folder, and "update my ideas page from this week's notes" stops requiring copy-paste - Codex reads the notes directly, drafts the update in your content-voice, and shows the diff. One config entry, one recurring chore gone.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>codex resume + plugins - continuity and sharing<span class="mini">1 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong><code>codex resume</code></strong> reopens a previous session with its context intact - the conversation about your showcase redesign survives the weekend. For a long-running project like your site, one continuing session beats twenty cold starts.</li>
+          <li><strong>Plugins</strong> bundle skills for sharing - your <code>$site-design-system</code> and <code>$content-voice</code> from Session 3 live in <code>.agents/skills</code> as SKILL.md files, and a plugin wraps them into something a friend can install in one step. Your taste, portable.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Your maintenance playbook - the weekly ten minutes<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Everything this course built compresses into one short routine. Same time every week - the site stays alive because the routine is too small to skip:</p>
+        <table class="clean">
+          <thead><tr><th>Step</th><th>Move</th><th>Minutes</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><code>codex resume</code> - pick up your site session where it left off</td><td>1</td></tr>
+            <tr><td>2</td><td><code>codex exec</code> health check - links, image sizes, typos (Part 1 boxes)</td><td>2</td></tr>
+            <tr><td>3</td><td>One content update - a new idea note, a showcase entry, a bio tweak</td><td>4</td></tr>
+            <tr><td>4</td><td><code>/review</code> the change - the Session 5 habit, non-negotiable</td><td>2</td></tr>
+            <tr><td>5</td><td>Push - live site updated, laptop closed</td><td>1</td></tr>
+          </tbody>
+        </table>
+        <div class="callout win">
+          <strong>Why this works</strong>
+          Dead personal sites die of ceremony - updating feels like a project, so it never happens. Ten minutes with an agent doing the labor removes the ceremony. The sites that stay alive are the ones that are cheap to touch.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: BEYOND ============ -->
+  <section class="section" id="beyond">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the send-off</span>
+      <h2>Where you go from here <span class="tag concept">2 min live</span></h2>
+    </div>
+    <p class="lede">The website was never the point. It was the excuse to build habits that transfer to everything.</p>
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What transfers, and what to build next<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>What you now know travels:</strong> the agent loop (goal → context → action → verified result), GCOB, the AGENTS.md and skills standard, and the review-before-ship habit. Point them at any repo, any project, any job - they work the same.</li>
+          <li><strong>Next builds:</strong> a second site (for a project, a team, a family thing - you'll be shocked how fast round two goes), a small tool that scratches a real itch, or the big one: automating a chore from your actual work with exec and a skill.</li>
+          <li><strong>Keep learning where it's current:</strong> OpenAI Academy's <em>Codex for Builders</em> goes deeper on automation and team workflows, and the official docs changelog at learn.chatgpt.com is the real curriculum now - Codex ships fast, and the changelog is where the new power moves appear first.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>exec health check on your live site <span class="tag demo">★ 8 min · everyone runs it</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>From your site folder, run the link checker from Part 1: <code>codex exec "Check every internal and external link..."</code> - watch it work with no conversation, just output.</p></div>
+      <div class="step"><p>Read the report together. Most sites have at least one surprise - a renamed file, a moved anchor, an external link that died since Session 5.</p></div>
+      <div class="step"><p>Fix ONE finding, interactively: switch to regular <code>codex</code>, paste the finding, let it fix, <code>/review</code>, push. Broken link found by script, fixed by conversation, live in minutes.</p></div>
+      <div class="step"><p>Say the pattern out loud: <strong>exec finds, interactive fixes.</strong> That division of labor is the whole automation mindset.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Delegate to the cloud, close the lid <span class="tag demo">★ 10 min · the finale's showpiece</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Kick off a cloud task: <strong>"Add a 404 page that matches my design system - same header, same palette, a friendly 'that page wandered off' message, and a link home. Follow AGENTS.md and the $site-design-system skill."</strong></p></div>
+      <div class="step"><p>Confirm the task is running in the cloud. Then - deliberately, theatrically - <strong>close the laptop lid.</strong> Count to ten with the room. Codex is working right now, on a machine that isn't this one.</p></div>
+      <div class="step"><p>Reopen. Check the task: when it's done, read the diff like you learned in Session 5 - does the 404 page actually match your design system? (It read the same skills. It should.)</p></div>
+      <div class="step"><p>Merge it, pull, push if needed - then visit a nonsense URL on your live site and meet your new 404 page.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>The lid-close is not a gimmick - it's the mental model shifting in real time. Every previous session, closing the laptop stopped the work. This time it didn't. People remember the ten seconds of the closed lid longer than any slide in the course.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>Write the weekly Action <span class="tag demo">★ 5 min · commit it</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Run the GitHub Action prompt from Part 1 - Codex writes <code>.github/workflows/site-health.yml</code> with commented steps.</p></div>
+      <div class="step"><p>Read the file with Codex as your guide: <strong>"Walk me through this workflow line by line - when does it run, what does it check, what happens on failure?"</strong></p></div>
+      <div class="step"><p>Commit and push it. Enabling and watching the first run is homework - but the file is real, in your repo, written by describing what you wanted. A robot now guards your website's health.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week - and after <span class="tag exercise">◐ 45 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Run the maintenance playbook once, end to end:</strong> resume → exec health check → one content update → /review → push. Time it. If it's over fifteen minutes, ask Codex what to streamline.</li>
+      <li><strong>One parallel cloud experiment:</strong> fire two cloud tasks with two different hero section treatments, review both diffs, merge the winner, thank the loser. This is how you'll explore design decisions from now on.</li>
+      <li><strong>Enable the Action</strong> from Demo 3 and watch its first scheduled run report in.</li>
+      <li><strong>The graduation exercise:</strong> write one new skill for something in your REAL work - a report format, a data-check routine, an email tone. The course habit escaping into your actual life is the true final project.</li>
+    </ul>
+    <div class="callout win">
+      <strong>That's the course 🎓</strong>
+      Six sessions ago the website lived in your head. Now it lives on the internet, checks its own health, and updates in ten minutes a week - and you learned to work with an agent along the way, which is the skill that outlasts any single tool. Go build the next thing. Phoebe is proud of you, and honestly, so is Codex.
+    </div>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you graduate 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · When does codex exec beat interactive codex?</p>
+      <button class="qopt" type="button">A · Always - it's the newer command</button>
+      <button class="qopt" type="button">B · When the task is creative and needs steering</button>
+      <button class="qopt" type="button">C · When the task is fully specified and repeatable - scripts, CI, cron, weekly sweeps</button>
+      <p class="qwhy">exec is one sentence, not a conversation: perfect for checks you'd run every week, wrong for taste-driven building. exec finds, interactive fixes.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · Best candidate for a cloud task instead of local work?</p>
+      <button class="qopt" type="button">A · A long, well-specified, self-contained change you can review as a diff later</button>
+      <button class="qopt" type="button">B · A fuzzy design question you're still figuring out</button>
+      <button class="qopt" type="button">C · A two-second typo fix</button>
+      <p class="qwhy">Cloud shines when the spec is clear and your presence adds nothing - long tasks, parallel experiments, or when you're away. Fuzzy taste work wants the local loop.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · On a Plus plan, what draws from the same 5-hour usage window?</p>
+      <button class="qopt" type="button">A · Only regular Codex messages - cloud is separate</button>
+      <button class="qopt" type="button">B · Regular messages, cloud tasks, AND code reviews - one shared pool</button>
+      <button class="qopt" type="button">C · Nothing - Plus is unlimited</button>
+      <p class="qwhy">One pool, not three. Five parallel cloud tasks spend five tasks of window at once - great when deliberate, surprising when not.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of OpenAI's official materials - docs at <a href="https://learn.chatgpt.com/docs">learn.chatgpt.com</a> and free courses at <a href="https://academy.openai.com">OpenAI Academy</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CLI developer commands / exec (official docs)</span><span class="note">non-interactive runs, scripting, CI patterns - Part 1 + Demo 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Codex cloud (official docs)</span><span class="note">cloud tasks, parallel runs, CLI/app/phone kickoff, Plus limits - Part 2 + Demo 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Codex for Builders (OpenAI Academy)</span><span class="note">the automation portions - exec workflows, delegation habits - Parts 1-3</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">MCP in Codex (official docs)</span><span class="note">working overview + one practical server here; full config depth is docs territory</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 6 cheat sheet <span>· pin this forever</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>codex exec</b><span>One-shot, no conversation: codex exec "check all links and report". For CI, cron, weekly sweeps. Say "report only" for audits.</span></div>
+      <div class="cheat-item"><b>exec vs interactive</b><span>exec finds, interactive fixes. Fully specified + repeatable = exec. Taste + steering = interactive.</span></div>
+      <div class="cheat-item"><b>Cloud tasks</b><span>Delegate from CLI, app, or phone; Codex works on a copy of your repo in the cloud; a diff/PR comes back. Parallel tasks = superpower.</span></div>
+      <div class="cheat-item"><b>Plus window</b><span>Messages + cloud tasks + code reviews share ONE 5-hour pool. Parallel tasks spend it faster - be deliberate.</span></div>
+      <div class="cheat-item"><b>Continuity kit</b><span>codex resume (session survives the weekend) · MCP servers in config (more hands) · plugins (skills, shareable).</span></div>
+      <div class="cheat-item"><b>Weekly 10 minutes</b><span>resume → exec health check → one content update → /review → push. Cheap to touch = stays alive.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 6 of 6 · learn-codex-with-phoebe · by Phoebe Fu</span>
+    <span><a href="05-ship-it.html">← Prev: Ship it</a> &nbsp;·&nbsp; <a href="../index.html">All sessions →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 3 · AGENTS.md and skills: your taste, encoded - learn codex with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-codex-with-phoebe</a> / Session 3 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe · Session 3 of 6</div>
+    <h1>AGENTS.md and skills: <span class="accent">your taste, encoded</span></h1>
+    <p class="sub">You've been re-explaining your standards to Codex every session. Today that stops. AGENTS.md at three levels holds your standing facts; skills - an open, cross-agent standard - hold your reusable procedures. Encode them once, benefit forever.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Builders</span>
+      <span class="chip time">45 min</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-17 · AGENTS.md &amp; skills</span>
+      <span class="a3" style="flex:5">17-40 · Build two skills</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Stop repeating yourself</h2>
+    </div>
+    <p class="lede">By now you've typed "editorial minimal, one accent color, no frameworks" enough times to dream about it. Every instruction you repeat is a tax on every future session - and Codex ships two mechanisms to abolish the tax. AGENTS.md carries your standing facts and rules; skills carry your named, reusable procedures. Today you finish the first properly and build two of the second for your site. This is the session where Codex stops being a tool you configure and starts being a teammate you've trained.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR website</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      A three-level mental model of AGENTS.md, two working skills in your repo - a design-system skill and a content-voice skill - and the judgment to know which mechanism any future rule belongs in.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: AGENTS.MD PROPERLY ============ -->
+  <section class="section" id="agents-md">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers the personalization docs, fully</span>
+      <h2>AGENTS.md, properly <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Session 2 gave you a repo-root AGENTS.md. There are actually three levels, read in cascade - and knowing what belongs at each level is the difference between a file Codex uses and a novel it skims.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AGENTS.md hierarchy: global at ~/.codex, repo root, subdirectory - cascading, most specific wins">
+        <style>
+          .ahT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .ahC { font: 600 13px 'SF Mono', Menlo, monospace; fill: #FFFFFF; opacity: .92; }
+          .ahS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .ahN { font: 400 12.5px Inter, sans-serif; fill: #6E6E80; }
+          .ahA { stroke: #C5C5D2; stroke-width: 2.5; fill: none; marker-end: url(#ahAh); }
+        </style>
+        <defs>
+          <marker id="ahAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="60" y="30" width="330" height="72" rx="12" fill="#0A6B54"/>
+        <text class="ahT" x="82" y="58">1 · Global</text>
+        <text class="ahC" x="82" y="78">~/.codex/AGENTS.md</text>
+        <text class="ahS" x="82" y="94">you, everywhere: universal preferences</text>
+        <rect x="140" y="130" width="330" height="72" rx="12" fill="#10A37F"/>
+        <text class="ahT" x="162" y="158">2 · Repo root</text>
+        <text class="ahC" x="162" y="178">my-site/AGENTS.md</text>
+        <text class="ahS" x="162" y="194">this project: rules, taste, layout</text>
+        <rect x="220" y="230" width="330" height="72" rx="12" fill="#2FBF96"/>
+        <text class="ahT" x="242" y="258">3 · Subdirectory</text>
+        <text class="ahC" x="242" y="278">my-site/ideas/AGENTS.md</text>
+        <text class="ahS" x="242" y="294">this section only: scoped rules</text>
+        <line class="ahA" x1="225" y1="102" x2="270" y2="125"/>
+        <line class="ahA" x1="305" y1="202" x2="350" y2="225"/>
+        <text class="ahN" x="490" y="62">Read in cascade, top to bottom.</text>
+        <text class="ahN" x="490" y="82">All levels apply at once;</text>
+        <text class="ahN" x="490" y="102">where they conflict, the most</text>
+        <text class="ahN" x="490" y="122">specific level wins.</text>
+        <text class="ahN" x="590" y="170">Same files work across CLI,</text>
+        <text class="ahN" x="590" y="190">desktop app, and IDE -</text>
+        <text class="ahN" x="590" y="210">write once, applies at</text>
+        <text class="ahN" x="590" y="230">every door.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the AGENTS.md cascade: global → repo → subdirectory, most specific wins</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>What belongs at each level<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Level</th><th>Belongs there</th><th>For our project</th></tr></thead>
+          <tbody>
+            <tr><td>Global (~/.codex/AGENTS.md)</td><td>Your universal preferences - true on every project you'll ever touch</td><td>"I'm learning - explain non-obvious changes", "always summarize diffs"</td></tr>
+            <tr><td>Repo root</td><td>This project's rules: purpose, boundaries, taste, file layout</td><td>The v1 you built in Session 2 - plain code, editorial minimal, file map</td></tr>
+            <tr><td>Subdirectory</td><td>Rules for one section that differ from the rest</td><td>An ideas/ folder rule: "posts here are 200 words max, first person"</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>The placement test</strong>
+          Ask "how far does this rule travel?" Every project → global. This project → repo root. One corner of this project → subdirectory. Misplaced rules either leak everywhere or vanish when you need them.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Anti-patterns: novels and misfiled procedures<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Two failure modes eat most AGENTS.md files in the wild:</p>
+        <ul>
+          <li><strong>The novel nobody reads.</strong> Forty rules, essays on philosophy, three contradictions. Every line spends context on every conversation, relevant or not - and important rules drown in filler. Keep it terse. If a rule hasn't mattered in a month, cut it.</li>
+          <li><strong>Rules that belong in a skill.</strong> A step-by-step procedure with its own reference material - "here's exactly how we produce X" - doesn't belong in AGENTS.md. AGENTS.md is always loaded; skills load only when their moment comes. Misfiling procedures as rules bloats every session with instructions for tasks you're not doing.</li>
+        </ul>
+        <div class="prompt-box bad"><span class="label">Smell - a procedure squatting in AGENTS.md</span>## Writing ideas posts
+Step 1: start with a hook question. Step 2: state the one takeaway.
+Step 3: 200 words max, first person. Step 4: end with the takeaway
+line repeated. Step 5: check reading level. Step 6: ...</div>
+        <p>That's a skill wearing an AGENTS.md costume - it has steps, a format, and a trigger moment ("when writing an ideas post"). We'll rehome it in Part 3.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: SKILLS ============ -->
+  <section class="section" id="skills">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the build-skills docs</span>
+      <h2>Skills: the open standard <span class="tag concept">8 min live</span></h2>
+    </div>
+    <p class="lede">A skill is a folder that teaches your agent a repeatable procedure. It's an open, cross-agent standard - the same skill folder works in Codex, Claude Code, and anything else that speaks it. One SKILL.md file is required; everything else is optional.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Skill anatomy: a folder containing SKILL.md with frontmatter as the doorbell and body as the manual, plus optional scripts, references, and openai.yaml">
+        <style>
+          .skT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .skS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .skI { font: 600 13px Inter, sans-serif; fill: #202123; }
+          .skM { font: 600 12.5px 'SF Mono', Menlo, monospace; fill: #7DDFC3; }
+          .skW { font: 400 12px Inter, sans-serif; fill: #ECECF1; }
+          .skN { font: 400 12.5px Inter, sans-serif; fill: #6E6E80; }
+          .skA { stroke: #C5C5D2; stroke-width: 2.5; fill: none; marker-end: url(#skAh); }
+        </style>
+        <defs>
+          <marker id="skAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="30" y="90" width="215" height="150" rx="14" fill="#0A6B54"/>
+        <text class="skT" x="52" y="120">📁 content-voice/</text>
+        <text class="skS" x="52" y="146">SKILL.md  ← required</text>
+        <text class="skS" x="52" y="168">scripts/  · optional</text>
+        <text class="skS" x="52" y="190">references/  · optional</text>
+        <text class="skS" x="52" y="212">agents/openai.yaml  · opt.</text>
+        <line class="skA" x1="245" y1="165" x2="330" y2="165"/>
+        <rect x="335" y="35" width="510" height="115" rx="12" fill="#10A37F"/>
+        <text class="skT" x="357" y="63">Frontmatter = the doorbell 🔔</text>
+        <text class="skS" x="357" y="86">name + description - the agent reads ONLY this to decide</text>
+        <text class="skS" x="357" y="104">whether the skill fits the current task. The description</text>
+        <text class="skS" x="357" y="122">IS the trigger: name the task, name the moment.</text>
+        <rect x="335" y="165" width="510" height="115" rx="12" fill="#0E1613"/>
+        <text class="skM" x="357" y="193">Body = the manual 📖</text>
+        <text class="skW" x="357" y="216">Loaded only after the doorbell rings. The full procedure:</text>
+        <text class="skW" x="357" y="234">steps, format rules, examples - as long as it needs to be,</text>
+        <text class="skW" x="357" y="252">because it costs nothing until it's actually used.</text>
+        <text class="skN" x="30" y="310">Doorbell small and sharp, manual as thick as you like - that split is why skills scale and AGENTS.md novels don't.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - skill anatomy: the doorbell (frontmatter) decides, the manual (body) instructs</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Where skills live and how they fire<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Location</th><th>Scope</th><th>Use for</th></tr></thead>
+          <tbody>
+            <tr><td><code>.agents/skills/</code> in the repo</td><td>This project - travels with the repo, teammates get it too</td><td>Our two site skills today</td></tr>
+            <tr><td><code>~/.agents/skills/</code> in your home folder</td><td>You, on every project on this machine</td><td>Personal procedures you reuse everywhere</td></tr>
+            <tr><td>Admin-managed</td><td>Everyone in an organization</td><td>Team SOPs, rolled out centrally</td></tr>
+          </tbody>
+        </table>
+        <p>Three ways a skill fires:</p>
+        <ul>
+          <li><strong>Implicitly:</strong> your task matches the description, the doorbell rings, the skill loads. This is the goal state - you just work, and the right procedure shows up.</li>
+          <li><strong>Explicitly by mention:</strong> <code>$content-voice</code> in a prompt forces that skill in.</li>
+          <li><strong>Via <code>/skills</code>:</strong> lists what's installed - your first stop when a skill isn't firing.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Cross-agent portability: write once, use in every agent<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>This is the quiet superpower of the standard.</strong> Skills are the SAME format Claude Code uses - a Claude Code skill folder copies into <code>.agents/skills/</code> and works in Codex unchanged, and vice versa. Real teams run exactly this way: ONE skills folder in the repo, colleagues on Codex and colleagues on Claude Code both drawing from it. Your procedures outlive any single tool subscription - that's what "open standard" buys you.</p>
+        </div>
+        <ul>
+          <li><strong>agents/openai.yaml</strong> is the optional per-agent tuning file - Codex-specific settings live there without breaking the skill for other agents.</li>
+          <li><strong>Plugins</strong> bundle multiple skills into one installable package - the distribution format when your skills are worth sharing beyond one repo.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>$skill-creator: the skill that builds skills<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Codex ships a built-in <code>$skill-creator</code> skill that scaffolds new skills interactively - it interviews you about the task, the trigger moment, and the rules, then writes the folder, the frontmatter, and the body for you. It's also opinionated about descriptions, which matters because <strong>the description controls triggering</strong>: vague description, skill never fires; sharp description ("use when..."), skill fires exactly when it should. Demo 1 uses it end to end. Hand-writing a SKILL.md (Demo 2) is worth doing once anyway - a skill is just a markdown file, and knowing that removes all the mystery.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: ENCODE THE SITE'S STANDARDS ============ -->
+  <section class="section" id="encode">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · applying it to the project</span>
+      <h2>Encode the site's standards <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">You now have two boxes to sort every standard into. The sorting rule is simple: a standing fact goes in AGENTS.md; a procedure with a format goes in a skill.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The sorting rule, and today's two skills<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Standard</th><th>Mechanism</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>"No frameworks, plain code"</td><td>AGENTS.md</td><td>Standing fact - always true, no steps</td></tr>
+            <tr><td>"Files live at the project root"</td><td>AGENTS.md</td><td>Standing fact about layout</td></tr>
+            <tr><td>How to style any new component (palette, spacing, type)</td><td>Skill: site-design-system</td><td>Procedure with a format, fires when building UI</td></tr>
+            <tr><td>How an ideas post gets written (length, voice, structure)</td><td>Skill: content-voice</td><td>Procedure with a format, fires when writing posts</td></tr>
+          </tbody>
+        </table>
+        <p>Those two skills are what we build in the demos - and they pay off immediately: Session 4 builds the about, showcase, and ideas pages, and both skills will fire on their own while we do.</p>
+        <div class="callout tip">
+          <strong>Still unsure which box?</strong>
+          Ask "does it have steps and an output format?" Yes → skill. It's just true → AGENTS.md. And if it only applies in one folder, remember the third option: a subdirectory AGENTS.md.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 2 · the main event</span>
+      <h2>Build site-design-system with $skill-creator <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>In your my-site folder, kick it off: <strong>"$skill-creator - I want a skill called site-design-system that encodes this site's visual rules so every new component follows them."</strong> It starts interviewing you.</p></div>
+      <div class="step"><p>Feed the interview your real answers - here's the shape (swap in YOUR taste):</p>
+        <div class="prompt-box good"><span class="label">★ Interview answers to give $skill-creator</span>Trigger moment: whenever building or restyling any visual component on this site.
+
+Accent color: deep teal #0F766E - the ONLY accent. Everything else is near-black text on off-white.
+
+Spacing: multiples of 8px only. Sections get 64px vertical padding; cards get 24px.
+
+Typography: system font stack. Body 18px/1.6. Headings tight, max two sizes per page.
+
+Banned patterns: drop shadows, gradients, more than one accent color, decorative icons, anything that smells like a template.</div></div>
+      <div class="step"><p>Review what it scaffolds in <code>.agents/skills/site-design-system/</code> - open SKILL.md, read the description it wrote. Sharpen it if the trigger moment isn't crisp.</p></div>
+      <div class="step"><p><strong>Test A - explicit:</strong> "Using $site-design-system, add a small 'currently reading' card to the homepage." Verify the result obeys your palette and spacing.</p></div>
+      <div class="step"><p><strong>Test B - implicit, the real test:</strong> new conversation, NO mention of the skill: "Add a footer with contact links to the homepage." Watch whether the skill fires on its own. If it doesn't, the description is too vague - sharpen it and re-test. That's the whole debugging loop for skills.</p></div>
+    </div>
+    <div class="callout win">
+      <strong>★ What just happened</strong>
+      Your design taste became executable. From now on "add a component" means "add a component that looks like mine" - without you saying so.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 2</span>
+      <h2>Hand-write content-voice <span class="tag demo">★ 8 min · everyone writes</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>No scaffolder this time - create <code>.agents/skills/content-voice/SKILL.md</code> yourself (ask Codex to create the file with your content, or use any editor):</p>
+        <div class="prompt-box good"><span class="label">★ Complete SKILL.md for content-voice</span>---
+name: content-voice
+description: Use when writing or editing a post for the ideas
+  section of this site. Applies the site owner's writing voice
+  and the ideas-post format.
+---
+
+# Content voice - ideas posts
+
+Every ideas post follows this shape:
+
+1. Open with the idea itself in one plain sentence. No throat-
+   clearing, no "In today's world...".
+2. 200 words maximum. If it needs more, it's two posts.
+3. First person, concrete, warm. Short sentences. No jargon
+   without a plain-language gloss.
+4. Exactly one takeaway line at the end, on its own line,
+   starting with "The takeaway:".
+5. Titles are lowercase, five words or fewer.
+
+When editing an existing post, preserve the author's phrasing
+wherever it already meets these rules - tighten, don't rewrite.</div></div>
+      <div class="step"><p>Notice what you just did: frontmatter doorbell (when to fire), body manual (how to write). That's the entire standard - no tooling required.</p></div>
+      <div class="step"><p>Test it on a real sample: <strong>"Write an ideas post about why I think every team needs a data dictionary."</strong> Check the output against the five rules - length, first person, the takeaway line.</p></div>
+      <div class="step"><p>One correction lap if needed - and if the skill didn't fire implicitly, you know exactly which line to fix: the description.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Port one skill from the wild:</strong> browse an awesome-agent-skills list, pick one that fits your work, and READ its SKILL.md top to bottom before installing it into <code>~/.agents/skills/</code>. (Skills are instructions your agent will follow - reading before installing is the security habit, from day one.)</li>
+      <li><strong>Add one global preference</strong> to <code>~/.codex/AGENTS.md</code> - something true of you on every project, like "always show a diff summary" or "explain non-obvious changes while I'm learning".</li>
+      <li><strong>Leads and managers:</strong> inventory your team's SOPs - which three are really skills waiting to be written? A procedure with steps and an output format qualifies. That inventory is the start of a team skills folder.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Your skill never fires unless you type $its-name. What do you fix first?</p>
+      <button class="qopt" type="button">A · Move it from the repo to ~/.agents/skills</button>
+      <button class="qopt" type="button">B · The description in the frontmatter - it's the doorbell, and it controls implicit triggering</button>
+      <button class="qopt" type="button">C · Make the body longer and more detailed</button>
+      <p class="qwhy">The agent reads only name + description to decide whether a skill fits the task. Vague description, silent doorbell. Sharpen "use when..." and re-test.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · "Ideas posts: 200 words, first person, one takeaway line, five formatting steps." AGENTS.md or skill?</p>
+      <button class="qopt" type="button">A · AGENTS.md - it's about this project</button>
+      <button class="qopt" type="button">B · Neither - just say it each time</button>
+      <button class="qopt" type="button">C · A skill - it's a procedure with a format that fires at a specific moment</button>
+      <p class="qwhy">Standing facts go in AGENTS.md; procedures with steps and an output format go in skills, loading only when their moment comes. This one has both steps and a format.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Where do skills live so they travel WITH this repo (and reach teammates too)?</p>
+      <button class="qopt" type="button">A · .agents/skills/ inside the repo</button>
+      <button class="qopt" type="button">B · ~/.codex/AGENTS.md</button>
+      <button class="qopt" type="button">C · ~/.agents/skills/ in your home folder</button>
+      <p class="qwhy">Repo skills live in .agents/skills/ and ship with the project; ~/.agents/skills/ is personal, machine-wide. AGENTS.md is for rules, not skill folders.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of OpenAI's official materials - docs at <a href="https://learn.chatgpt.com/docs">learn.chatgpt.com</a> and free courses at <a href="https://academy.openai.com">OpenAI Academy</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Build skills (official docs)</span><span class="note">anatomy, locations, triggering, $skill-creator, plugins, portability - Part 2 + both demos</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Personalization / AGENTS.md (official docs)</span><span class="note">full hierarchy, level placement, anti-patterns - Part 1, completes Session 2's basics</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Codex for Builders (OpenAI Academy)</span><span class="note">the skills portion here; the rest lands in Sessions 4 and 6</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 3 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>AGENTS.md cascade</b><span>~/.codex/AGENTS.md (you, everywhere) → repo root (this project) → subdirectory (this section). Most specific wins.</span></div>
+      <div class="cheat-item"><b>The sorting rule</b><span>Standing fact → AGENTS.md. Procedure with steps + format → skill. One-folder rule → subdirectory AGENTS.md.</span></div>
+      <div class="cheat-item"><b>Skill anatomy</b><span>Folder + SKILL.md. Frontmatter (name + description) = doorbell, decides triggering. Body = manual, loads on demand. Optional: scripts/, references/, agents/openai.yaml.</span></div>
+      <div class="cheat-item"><b>Where &amp; how they fire</b><span>.agents/skills (repo) · ~/.agents/skills (you). Implicit by task match · $name mention · /skills to list.</span></div>
+      <div class="cheat-item"><b>Not firing?</b><span>Fix the description, not the body. Test implicitly: fresh conversation, matching task, no $mention.</span></div>
+      <div class="cheat-item"><b>Portability</b><span>Open standard, shared with Claude Code - skills copy between agents unchanged. Bundle several as a plugin to distribute. Read any SKILL.md before installing it.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 3 of 6 · learn-codex-with-phoebe · by Phoebe Fu</span>
+    <span><a href="02-first-build.html">← Prev: First build</a> &nbsp;·&nbsp; <a href="04-design-and-content.html">Next: Design and content →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

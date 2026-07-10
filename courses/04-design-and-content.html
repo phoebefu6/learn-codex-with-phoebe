@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 4 · Design and content: make it yours - learn codex with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-codex-with-phoebe</a> / Session 4 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe · Session 4 of 6</div>
+    <h1>Design and content: <span class="accent">make it yours</span></h1>
+    <p class="sub">The skeleton from Session 2 becomes a real site today: all three sections filled with your actual bio, your actual builds, your actual ideas - then polished through a critique loop until the design is something you're proud to send people.</p>
+    <div class="chip-row">
+      <span class="chip level">🟡 Medium</span>
+      <span class="chip audience">Builders</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-15 · Raw material</span>
+      <span class="a3" style="flex:4">15-35 · Polish loops</span>
+      <span class="a4" style="flex:2">35-45 · Pro pass + Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>From skeleton to something you'd actually send people</h2>
+    </div>
+    <p class="lede">Right now your site is a well-built empty house: Session 2's homepage skeleton, guarded by Session 3's AGENTS.md and skills. Today it gets furniture - three finished sections built from YOUR notes, in YOUR voice, with a design that survives a screenshot. This is the session where the project stops being an exercise and starts being your website.</p>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      All three sections (about / showcase / ideas) built from your Session 1 notes file, at least two full design polish loops completed, and an accessibility + mobile pass done - the site Session 5 will put on the internet.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: RAW MATERIAL ============ -->
+  <section class="section" id="raw-material">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · the raw-notes-to-pages workflow</span>
+      <h2>Pages from raw material <span class="tag concept">8 min live</span></h2>
+    </div>
+    <p class="lede">The Session 1 homework - a plain notes file with your bio, your builds, your ideas - was the real work. Today's rule: notes first, generate second. Codex shapes your material; it never invents it.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Notes first, generate second<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Ask an AI to "write my about page" from nothing and you get a plausible stranger: confident, generic, and not you. Give it real raw material and a job description, and it becomes what it's actually good at - an editor. The difference is one prompt:</p>
+        <div class="prompt-box bad"><span class="label">Weak - invites invention</span>Write an impressive about section for me. I work in data and AI.</div>
+        <div class="prompt-box good"><span class="label">Strong - GCOB, notes as the source of truth</span>Goal: build all three sections of my site - about, showcase, ideas - from notes.md in this folder.
+
+Context: notes.md is the source of truth for facts and voice. Use $site-design-system for all layout and styling decisions.
+
+Output: the three sections finished in index.html/style.css, plus a short list of every place you changed my wording and why.
+
+Boundaries: content verbatim where it's good, tighten where it rambles - but never add facts, credentials, or adjectives that aren't in my notes. Flag anything that sounds like filler instead of writing around it.</div>
+        <ul>
+          <li><strong>Verbatim where it's good:</strong> your best lines survive untouched - that's what keeps the page sounding like you.</li>
+          <li><strong>Tighten where it rambles:</strong> editing is the job you're delegating, not authorship.</li>
+          <li><strong>Flag, don't pad:</strong> "flag anything that sounds like filler" turns Codex into an honest editor instead of a content mill.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Keeping YOUR voice - the skill does the guarding<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>You encoded your voice once, in Session 3's <code>$content-voice</code> skill - sentence length, warmth, the words you'd never use. Now it earns its keep: every content prompt today runs under it, so you're not re-explaining your taste in every message.</p>
+        <ul>
+          <li><strong>Invoke it explicitly</strong> when content is the point: "use $content-voice for all copy in this pass".</li>
+          <li><strong>When output drifts</strong> ("that doesn't sound like me"), fix the skill, not just the page - the correction then applies forever.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>A learner's first generated bio opened with "As a passionate, results-driven professional..." - three things her $content-voice skill banned. One message ("re-read $content-voice, then rewrite the bio") fixed the page. Adding "never open with 'As a...'" to the skill fixed every future page too.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What "good raw material" looks like<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Section</th><th>Raw material that works</th><th>What Codex does with it</th></tr></thead>
+          <tbody>
+            <tr><td>About</td><td>A short honest bio + 2-3 specifics (what you do, what you care about)</td><td>Tightens, orders, keeps your phrasing</td></tr>
+            <tr><td>Showcase</td><td>3-5 builds, one line each: what it is, why it exists, one real result</td><td>Formats into cards, asks when a line is vague</td></tr>
+            <tr><td>Ideas</td><td>2-3 ideas as rough paragraphs - unpolished is fine</td><td>Trims to crisp notes, flags where you trailed off</td></tr>
+          </tbody>
+        </table>
+        <p>Thin notes are fixable: ask Codex to interview you. "Ask me five questions that would make my showcase entries concrete" fills gaps with YOUR answers, not its guesses.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: POLISH LOOP ============ -->
+  <section class="section" id="polish-loop">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · the design polish loop</span>
+      <h2>The design polish loop <span class="tag concept">10 min live</span></h2>
+    </div>
+    <p class="lede">Codex can look at a screenshot of your page and critique it like a designer - then fix what it found. Screenshot, critique, fix, reload: run the loop until the page survives a hard look.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The design polish loop: screenshot, critique, fix, reload - a repeating four-step cycle">
+        <style>
+          .plT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .plS { font: 400 12px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .plK { font: 700 15px Inter, sans-serif; fill: #202123; }
+          .plKS { font: 400 12px Inter, sans-serif; fill: #202123; opacity: .75; }
+          .plC { font: 600 13px Inter, sans-serif; fill: #6E6E80; }
+          .plX { font: 400 12.5px Inter, sans-serif; fill: #6E6E80; }
+          .plA { stroke: #C5C5D2; stroke-width: 2; fill: none; marker-end: url(#plAh); }
+        </style>
+        <defs>
+          <marker id="plAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="100" y="38" width="215" height="62" rx="12" fill="#0A6B54"/>
+        <text class="plT" x="120" y="64">1 · 📸 Screenshot</text>
+        <text class="plS" x="120" y="86">capture the page as it really looks</text>
+        <rect x="565" y="38" width="215" height="62" rx="12" fill="#10A37F"/>
+        <text class="plT" x="585" y="64">2 · 🔎 Critique</text>
+        <text class="plS" x="585" y="86">Codex reads it like a designer</text>
+        <rect x="565" y="172" width="215" height="62" rx="12" fill="#2FBF96"/>
+        <text class="plT" x="585" y="198">3 · 🛠️ Fix</text>
+        <text class="plS" x="585" y="220">apply the top-ranked fix only</text>
+        <rect x="100" y="172" width="215" height="62" rx="12" fill="#7DDFC3"/>
+        <text class="plK" x="120" y="198">4 · 🔄 Reload</text>
+        <text class="plKS" x="120" y="220">look again with fresh eyes</text>
+        <line class="plA" x1="320" y1="69" x2="558" y2="69"/>
+        <line class="plA" x1="672" y1="103" x2="672" y2="165"/>
+        <line class="plA" x1="560" y1="203" x2="322" y2="203"/>
+        <line class="plA" x1="207" y1="169" x2="207" y2="107"/>
+        <text class="plC" x="385" y="145">one loop ≈ 2 minutes</text>
+        <rect x="367" y="158" width="12" height="12" fill="#D97706"/>
+        <text class="plX" x="385" y="168">one fix per loop - batch fixes hide which one worked</text>
+        <text class="plX" x="100" y="270">Stop condition: you screenshot the page and have nothing left to complain about. Usually 3-5 loops.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the polish loop: screenshot → critique → fix → reload, repeat until proud</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The structured critique prompt<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>"Make it prettier" gets you random churn. A structured critique gets you a designer's read. Screenshot the page (full window), drop the image into Codex, and send this:</p>
+        <div class="prompt-box good"><span class="label">★ The critique prompt - reuse every loop</span>Here's a screenshot of my site as it renders right now. Critique it like a designer reviewing a junior's work:
+
+1. First impression - what does this page say about its owner in 3 seconds?
+2. Hierarchy - does the eye land where it should? What competes?
+3. Contrast - anything hard to read or too timid to notice?
+4. Spacing - where is it cramped, where does whitespace go to waste?
+5. Consistency - fonts, colors, spacing units: what breaks the system?
+
+Then give me your top 3 fixes, ranked by impact. Don't change anything yet.</div>
+        <ul>
+          <li><strong>"Don't change anything yet"</strong> keeps critique and fix as separate moves - you stay the editor-in-chief.</li>
+          <li><strong>Apply fix #1 only,</strong> reload, re-screenshot. If the critique was right, the next loop's complaints get smaller.</li>
+          <li><strong>Disagree freely:</strong> "I like the big name, skip fix 2" is the loop working, not failing.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Taste rules - the three that do most of the work<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>One accent color.</strong> One. Everything else is ink, paper, and grays. The second accent is where template-smell starts.</li>
+          <li><strong>Whitespace is a feature.</strong> When in doubt, add space, not elements. Cramped reads as amateur faster than any font choice.</li>
+          <li><strong>Kill anything that looks templated.</strong> Stock hero gradients, three-icon feature rows, "Lorem"-shaped copy - if you've seen it on a thousand sites, it's hiding you.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>These live in your skill already</strong>
+          Session 3 baked rules like these into $site-design-system - which is why today's fixes stay coherent instead of drifting. When a critique loop surfaces a taste rule you keep repeating, add it to the skill.
+        </div>
+      </div>
+    </details>
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>When the loop stalls - three escape hatches<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Around loop three or four, critiques sometimes turn cosmetic ("maybe 2px more padding") while the page still feels off. That's not done - that's stalled. Three ways out:</p>
+        <ul>
+          <li><strong>Ask for a bolder read:</strong> "Forget small fixes - if you redesigned ONE thing about this page to make it memorable, what would it be?" You can always say no.</li>
+          <li><strong>Bring a reference:</strong> screenshot a site whose feel you admire and ask "what does this page do that mine doesn't - structurally, not content?" Borrow the principle, never the look.</li>
+          <li><strong>Change one variable, hard:</strong> double the type scale, or strip every border, or try the accent somewhere unexpected. Reload, react, keep or revert. Git (next session) makes this fearless.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>Know when you're done</strong>
+          Done is not "nothing left to improve" - it's "I'd send this URL without apologizing." Ship at that bar; keep looping after it's live.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: PROFESSIONAL PASS ============ -->
+  <section class="section" id="pro-pass">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · the professional pass</span>
+      <h2>The professional pass <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Pretty on your laptop isn't done. Done means it works on a phone, for someone using a keyboard, for someone with low vision, and on a slow connection. One audit prompt covers the ground.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The audit prompt - responsive + accessibility in one pass<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="prompt-box good"><span class="label">★ The professional-pass prompt</span>Audit this site for accessibility and mobile issues:
+
+- responsive: layout at phone width, menu usability, nothing overflowing
+- contrast: text vs background, including text over images
+- alt text: every meaningful image described, decorative ones marked
+- heading order: one h1, no skipped levels
+- keyboard: can I reach and use every link and button with Tab alone?
+- performance sanity: flag any image over ~300KB
+
+Fix what's safe to fix without changing the design. List anything that needs my judgment instead of deciding for me.</div>
+        <p>"Fix what's safe, list what needs my judgment" is the key move - contrast tweaks and alt text are safe; "your gray-on-gray ideas section fails contrast, want a darker ink or a lighter card?" is a design decision that stays yours.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The professional-pass checklist<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Check</th><th>How to verify</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Phone-width layout</td><td>Resize the browser narrow, or open on your phone</td><td>Most visitors arrive from a phone - a LinkedIn tap, not a desktop bookmark</td></tr>
+            <tr><td>Mobile menu</td><td>Every section reachable at narrow width</td><td>A nav that vanishes on mobile is a site with one page</td></tr>
+            <tr><td>Contrast</td><td>Squint test + ask Codex to check ratios</td><td>Low-contrast "elegant" gray is unreadable in sunlight and fails real users</td></tr>
+            <tr><td>Alt text</td><td>Every meaningful image has a real description</td><td>Screen readers, broken images, and image search all read it</td></tr>
+            <tr><td>Heading order</td><td>One h1, then h2/h3 without skips</td><td>It's the document's outline - assistive tech navigates by it</td></tr>
+            <tr><td>Keyboard nav</td><td>Put the mouse down, Tab through the whole page</td><td>If you can't reach it by keyboard, some visitors can't reach it at all</td></tr>
+            <tr><td>Image sizes</td><td>Nothing silly-large; ask Codex to flag &gt;300KB</td><td>A 4MB hero photo is the difference between instant and "is this broken?"</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Build the three sections from your notes <span class="tag demo">★ 12 min · everyone builds</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Open your project and confirm your notes file is in it. Thin notes? Two minutes now: one honest line per build, one rough paragraph per idea.</p></div>
+      <div class="step"><p>Run the Part 1 GCOB prompt - notes as source of truth, $site-design-system for layout, verbatim/tighten/flag boundaries. Let Codex build all three sections.</p></div>
+      <div class="step"><p>Now the important part: read what it wrote ABOUT YOU, slowly. Not the code - the words. Does the bio sound like you? Are the showcase claims true?</p></div>
+      <div class="step"><p>Find the exaggeration - there's almost always one - and fix it: <strong>"It made my dashboard project sound grander than it is - I built it for one team, not 'transformed the organization'. Tone it down to what actually happened."</strong></p></div>
+      <div class="step"><p>Check the flags: everywhere Codex marked filler, either supply a real detail or cut the line. No padding survives.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>This is the discernment moment of the whole course. The tool will happily inflate you - "spearheaded", "cutting-edge", "at scale" - and it reads as fake to everyone who actually knows you. The learners whose sites land are the ones who caught the inflation and toned it DOWN. Accurate and modest beats grand and hollow, every time.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Two full polish loops <span class="tag demo">★ 8 min · everyone loops</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Loop 1: screenshot the full page, drop it into Codex with the structured critique prompt from Part 2. Read the three ranked fixes.</p></div>
+      <div class="step"><p>Apply fix #1 only - "apply your first fix, nothing else" - then reload and look. Better? Worse? Say so.</p></div>
+      <div class="step"><p>Loop 2: fresh screenshot, same prompt. Notice the complaints got smaller - that's the loop converging.</p></div>
+      <div class="step"><p>Apply the new top fix. Two loops in under eight minutes - now you know the cycle you'll run for the rest of this site's life.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Overruling is allowed</strong>
+      If a critique says "the name is too big" and you LIKE the big name, say "keeping the big name - it's the point. Apply fix 2 instead." Codex critiques; you decide. That division of labor is the whole loop.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>The audit <span class="tag demo">★ 4 min · follow along</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Run the Part 3 audit prompt - accessibility + mobile, fix what's safe, list what needs judgment.</p></div>
+      <div class="step"><p>Watch what it fixes silently (alt text, a contrast nudge, a heading-order swap) and read the judgment list out loud.</p></div>
+      <div class="step"><p>Make one judgment call from the list, then open the site on your actual phone. That's the render that matters.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 45 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Two more polish loops</strong> - fresh screenshot, structured critique, top fix only. The loop should feel like reflex by Session 5.</li>
+      <li><strong>Show the site to one honest friend.</strong> Collect exactly 3 reactions - first impression, one confusion, one favorite thing - and turn EACH into a Codex iteration. Real feedback beats ten self-critiques.</li>
+      <li><strong>Finish all showcase entries.</strong> Every build gets its honest line and real result. Session 5 ships whatever exists - ship the finished version.</li>
+      <li><strong>Optional:</strong> run the audit prompt once more after your edits - new content can quietly reintroduce old issues.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">1 · Why does the workflow insist on notes first, generate second?</p>
+      <button class="qopt" type="button">A · Notes make the prompt longer, and longer prompts work better</button>
+      <button class="qopt" type="button">B · Codex can't write content without a file to read</button>
+      <button class="qopt" type="button">C · Real notes make Codex an editor of your facts and voice - without them it invents a plausible stranger</button>
+      <p class="qwhy">Codex shapes your material; it never invents it. "Verbatim where good, tighten where rambling, never add facts" is the boundary that keeps the page yours.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">2 · The polish loop, in order:</p>
+      <button class="qopt" type="button">A · Screenshot → critique → fix → reload, one fix per loop</button>
+      <button class="qopt" type="button">B · Fix → screenshot → critique → reload, batch all fixes first</button>
+      <button class="qopt" type="button">C · Critique → reload → screenshot → fix, whenever you remember</button>
+      <p class="qwhy">Screenshot what's real, get a ranked critique, apply the TOP fix only, reload with fresh eyes. One fix per loop - batching hides which change worked.</p>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">3 · The accessibility pass catches...</p>
+      <button class="qopt" type="button">A · Slow servers and broken links</button>
+      <button class="qopt" type="button">B · Contrast, missing alt text, broken heading order, and things you can't reach by keyboard</button>
+      <button class="qopt" type="button">C · Spelling mistakes and copyright issues</button>
+      <p class="qwhy">Contrast, alt text, heading order, keyboard nav - plus the mobile layout and oversized images. Fix what's safe; design trade-offs stay your call.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session applies OpenAI's official prompting and iteration guidance to real content and design work - docs at <a href="https://learn.chatgpt.com/docs">learn.chatgpt.com</a> and free courses at <a href="https://academy.openai.com">OpenAI Academy</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Prompting guide (official docs), applied</span><span class="note">GCOB on real content + the structured critique prompt - Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Codex for Work (OpenAI Academy)</span><span class="note">content-from-raw-material workflows here; broader work patterns in Session 6</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Codex 101 (OpenAI Academy) iteration patterns</span><span class="note">screenshot-critique-fix loops + audit passes - Parts 2-3 and Demos 2-3</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 4 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Raw-material rule</b><span>Notes first, generate second. Codex edits your facts and voice - it never invents them.</span></div>
+      <div class="cheat-item"><b>The content prompt</b><span>Build from notes.md · use $site-design-system · verbatim where good, tighten where rambling · flag filler · never add facts.</span></div>
+      <div class="cheat-item"><b>The polish loop</b><span>Screenshot → critique → fix → reload. One fix per loop, 3-5 loops to proud.</span></div>
+      <div class="cheat-item"><b>The critique prompt</b><span>First impression · hierarchy · contrast · spacing · consistency · top 3 fixes ranked · "don't change anything yet".</span></div>
+      <div class="cheat-item"><b>Taste rules</b><span>One accent color · whitespace is a feature · kill anything that looks templated.</span></div>
+      <div class="cheat-item"><b>The pro pass</b><span>"Audit for accessibility + mobile; fix what's safe, list what needs my judgment." Then open it on your actual phone.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 4 of 6 · learn-codex-with-phoebe · by Phoebe Fu</span>
+    <span><a href="03-agents-and-skills.html">← Prev: Agents and skills</a> &nbsp;·&nbsp; <a href="../index.html">All sessions</a> &nbsp;·&nbsp; <a href="05-ship-it.html">Next: Ship it →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

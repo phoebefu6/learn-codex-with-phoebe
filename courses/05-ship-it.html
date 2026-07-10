@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 5 · Ship it: git, review, and going live - learn codex with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-codex-with-phoebe</a> / Session 5 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe · Session 5 of 6</div>
+    <h1>Ship it: <span class="accent">git, review, and going live</span></h1>
+    <p class="sub">Today your site gets a URL. Codex drives git so you get the safety without the trauma, /review becomes a habit before every commit, and GitHub Pages puts your name on the internet - all before Q&amp;A.</p>
+    <div class="chip-row">
+      <span class="chip level">🟠 Hard</span>
+      <span class="chip audience">Builders</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-15 · Git</span>
+      <span class="a3" style="flex:3">15-28 · Review habit</span>
+      <span class="a4" style="flex:4">28-45 · Go live + Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>The session where it stops being a folder</h2>
+    </div>
+    <p class="lede">Four sessions of work currently live in one folder on one laptop - one spilled coffee from oblivion. Today that changes twice over: git makes every state of your project recoverable, and GitHub Pages makes the site real, with a URL you can text to your mother. This is also, quietly, the session where you stop fearing git - because Codex drives and explains, and you just have to understand the moves.</p>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      Your project under version control with clean commit history, the /review-before-commit habit installed, and YOUR site live on GitHub Pages - a real URL, open on your phone, screenshot taken.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: GIT ============ -->
+  <section class="section" id="git">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · git, with Codex driving</span>
+      <h2>Git without the trauma <span class="tag concept">8 min live</span></h2>
+    </div>
+    <p class="lede">Git has a scary reputation it earned from bad tutorials, not from what you need today. The deal: Codex runs the commands, you understand the moves - init once, ignore the junk, commit with real messages.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>The three moves: init, ignore, commit<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Everything git does for you this course rests on three moves: <strong>init</strong> (start tracking this folder), <strong>.gitignore</strong> (never track junk like .DS_Store or editor files), and <strong>commit</strong> (save a named snapshot). You don't memorize commands - you supervise them:</p>
+        <div class="prompt-box good"><span class="label">★ The git setup prompt</span>Set up git in this project:
+
+- initialize the repository
+- write a sensible .gitignore for a plain HTML/CSS/JS site
+- make the first commit with a clear message describing what this site is
+
+Explain each command before running it - one plain-English line per command. I want to understand the moves, not just watch them.</div>
+        <ul>
+          <li><strong>"Explain before running"</strong> turns setup into a five-minute git lesson taught on YOUR project - the only kind that sticks.</li>
+          <li><strong>Real commit messages:</strong> "Personal site: about, showcase, ideas sections with design system" - not "stuff" or "asdf". Future you reads these.</li>
+          <li><strong>Commit at every good moment from now on:</strong> finished a polish loop? Commit. About to try something risky? Commit first.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Reading a diff - the skill that makes git useful<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>A diff is just "what changed since the last snapshot" - lines added, lines removed. You never need to decode raw diff output, because Codex narrates it:</p>
+        <div class="prompt-box good"><span class="label">★ The pre-commit habit</span>Show me what changed and why before every commit in this project - a short plain-English summary per file, then wait for my go-ahead.</div>
+        <p>This one sentence makes you the editor of your own history. Nothing enters a commit that you didn't read a summary of - which is exactly the discipline that matters when the stakes grow beyond a personal site.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>What this safety actually buys you<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Every committed state is recoverable.</strong> A bad edit, a Codex change you hate, a deleted file - "restore the header to how it was two commits ago" and it's back. Experimentation becomes free.</li>
+          <li><strong>History is documentation.</strong> Six months from now, "when did I change the accent color and why?" has an answer.</li>
+          <li><strong>Git is the bridge to shipping.</strong> GitHub Pages (Part 3) serves your site straight from this history - commits aren't just backups, they're deployments-in-waiting.</li>
+          <li><strong>The mental model in one line:</strong> git is a save button that never overwrites - every save is kept, named, and restorable.</li>
+        </ul>
+      </div>
+    </details>
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The six git words you'll actually hear<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Word</th><th>Plain English</th><th>You'll meet it when</th></tr></thead>
+          <tbody>
+            <tr><td>repo</td><td>A folder git is tracking - your project plus its whole history</td><td>Everywhere, constantly</td></tr>
+            <tr><td>commit</td><td>A named snapshot of the project at one moment</td><td>Every save point you make today</td></tr>
+            <tr><td>diff</td><td>What changed between two snapshots - lines added, lines removed</td><td>The pre-commit summary Codex narrates</td></tr>
+            <tr><td>remote</td><td>A copy of the repo living elsewhere - for you, on GitHub</td><td>Part 3, when your laptop stops being the only copy</td></tr>
+            <tr><td>push</td><td>Send your new commits to the remote</td><td>The moment your site updates, live</td></tr>
+            <tr><td>branch</td><td>A parallel line of history for trying things - yours is called main</td><td>Pages deploys from it; teams live in them</td></tr>
+          </tbody>
+        </table>
+        <p>That's the whole vocabulary this course needs. When any other git word appears, ask Codex "explain that like I'm new to git" - it always lands.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: REVIEW ============ -->
+  <section class="section" id="review-habit">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the code review docs</span>
+      <h2>The review habit <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Before changes become history, a second pair of eyes - <code>/review</code> examines your uncommitted changes (or past commits) and catches what you skimmed past: bugs, leftovers, inconsistencies. It slots into the pipeline right before commit.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 215" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The ship pipeline: change, review, fix, commit, push - review sits before commit">
+        <style>
+          .spT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .spK { font: 700 14px Inter, sans-serif; fill: #202123; }
+          .spX { font: 400 12px Inter, sans-serif; fill: #6E6E80; }
+          .spA { stroke: #C5C5D2; stroke-width: 2; fill: none; marker-end: url(#spAh); }
+        </style>
+        <defs>
+          <marker id="spAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="22" y="55" width="140" height="46" rx="10" fill="#0A6B54"/>
+        <text class="spT" x="42" y="83">✏️ Change</text>
+        <rect x="192" y="55" width="140" height="46" rx="10" fill="#10A37F"/>
+        <text class="spT" x="212" y="83">🔍 /review</text>
+        <rect x="362" y="55" width="140" height="46" rx="10" fill="#2FBF96"/>
+        <text class="spT" x="395" y="83">🛠️ Fix</text>
+        <rect x="532" y="55" width="140" height="46" rx="10" fill="#7DDFC3"/>
+        <text class="spK" x="552" y="83">📌 Commit</text>
+        <rect x="702" y="55" width="140" height="46" rx="10" fill="#202123"/>
+        <text class="spT" x="727" y="83">🚀 Push</text>
+        <line class="spA" x1="164" y1="78" x2="186" y2="78"/>
+        <line class="spA" x1="334" y1="78" x2="356" y2="78"/>
+        <line class="spA" x1="504" y1="78" x2="526" y2="78"/>
+        <line class="spA" x1="674" y1="78" x2="696" y2="78"/>
+        <text class="spX" x="22" y="128">edit the site,</text>
+        <text class="spX" x="22" y="144">any way you like</text>
+        <text class="spX" x="192" y="128">catches bugs, leftovers,</text>
+        <text class="spX" x="192" y="144">inconsistencies</text>
+        <text class="spX" x="362" y="128">apply what the</text>
+        <text class="spX" x="362" y="144">review caught</text>
+        <text class="spX" x="532" y="128">clean snapshot,</text>
+        <text class="spX" x="532" y="144">clear message</text>
+        <text class="spX" x="702" y="128">live on Pages</text>
+        <text class="spX" x="702" y="144">in about a minute</text>
+        <rect x="22" y="172" width="12" height="12" fill="#D97706"/>
+        <text class="spX" x="42" y="182">Review sits BEFORE commit: catch it while the fix is free, not after it's history - or live.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the ship pipeline: change → /review → fix → commit → push</figcaption>
+    </figure>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>/review before every commit<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Run <code>/review</code> with uncommitted changes in the folder and Codex reviews them like a colleague would: reading the diff with fresh eyes, against the whole project. What it reliably catches on a site like yours:</p>
+        <ul>
+          <li><strong>Bugs:</strong> a link pointing at a file you renamed, a script referencing an id you deleted.</li>
+          <li><strong>Leftovers:</strong> the TODO you meant to resolve, the commented-out block, a console.log from debugging.</li>
+          <li><strong>Inconsistencies:</strong> a hardcoded color that dodges your design system, a footer year that says last year.</li>
+        </ul>
+        <p>It can also review past commits - handy for "did anything sloppy slip into yesterday's work?"</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>The same habit at team scale - Codex on GitHub<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>The habit you're building solo is the exact one teams run on GitHub: Codex reviews pull requests there too - mention <code>@codex</code> on a PR to request a review, or it reviews automatically on repos where that's enabled. Same reviewer, same catches, at the scale where a missed leftover costs real money.</p>
+        <div class="callout tip">
+          <strong>Honesty card</strong>
+          For a solo static site, /review is training wheels - most of what it catches here, you'd survive. That's exactly why now is the time to build the habit: it costs 30 seconds today and pays enormously the day you touch a real codebase, where review-before-commit is the difference between professionals and cowboys.
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: GO LIVE ============ -->
+  <section class="section" id="go-live">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · quickstart to production</span>
+      <h2>GitHub Pages, live <span class="tag concept">8 min live</span></h2>
+    </div>
+    <p class="lede">GitHub Pages serves a static site straight from a repository - free, no servers, no config files. The recipe: create a repo, push your commits, flip one setting, wait a minute, open your URL.</p>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Create the repo and push - two roads, one prompt<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="prompt-box good"><span class="label">★ The go-live prompt</span>Put this site on GitHub:
+
+- if the gh CLI is installed, use it: create a public repo called my-site under my account, set it as the remote, and push - explaining each command first
+- if gh isn't available, walk me through the web flow instead: creating the repo on github.com, then give me the exact commands to connect this folder to it and push
+
+Either way, stop before anything runs and confirm the repo name and visibility with me.</div>
+        <ul>
+          <li><strong>Public repo:</strong> GitHub Pages on a free account needs the repository to be public - fine, it's a website; public is the point.</li>
+          <li><strong>The gh CLI road</strong> is three commands and stays in the terminal; <strong>the web road</strong> is clickier but shows you what a repo looks like from GitHub's side. Both end in the same place.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Flip the switch: enable Pages<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>On github.com, in your repo: <strong>Settings → Pages → Source: deploy from branch → main, root folder ( / ) → Save.</strong> GitHub builds for about a minute, then your site is at <code>https://YOURNAME.github.io/my-site/</code>.</p>
+        <ul>
+          <li><strong>Not up yet?</strong> Give it 60-90 seconds and hard-refresh. The Pages settings panel shows the live URL and build status.</li>
+          <li><strong>The update workflow forever after:</strong> edit → /review → commit → push → live in about a minute. No redeploy button, no upload step - push IS deploy.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>The push-is-deploy loop changes behavior: learners who shipped on Pages kept improving their sites for months, because the distance from "I should fix that typo" to "it's fixed, live" is under two minutes. Friction is what kills side projects - this workflow has almost none.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Optional: your own domain<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>yourname.com instead of yourname.github.io</strong> costs about $10-15/year: buy the domain at any registrar, add a CNAME record pointing to <code>YOURNAME.github.io</code>, then enter the domain in the repo's Pages settings and tick "Enforce HTTPS".</li>
+          <li><strong>Codex can walk you through it:</strong> "I bought yourname.com at [registrar] - give me the exact DNS records and Pages settings for this repo."</li>
+          <li><strong>No rush:</strong> the github.io URL is perfectly presentable, and the domain can be added any time without touching the site itself.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Git init, first commit, every command explained <span class="tag demo">★ 8 min · everyone commits</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>In your project, run the Part 1 setup prompt: init, .gitignore, first commit - with Codex explaining each command before running it.</p></div>
+      <div class="step"><p>Read the explanations out loud with a neighbor. If any line is fog ("what's staging?"), ask Codex - it's the cheapest git tutor alive.</p></div>
+      <div class="step"><p>Check the commit message before approving. If it's vague, demand better: <strong>"Rewrite that message so future-me knows what this snapshot contains."</strong></p></div>
+      <div class="step"><p>Install the diff habit for the rest of the course: <strong>"From now on, show me what changed and why before every commit."</strong></p></div>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Sabotage, then /review <span class="tag demo">★ 6 min · everyone sabotages</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Sabotage your own site, deliberately: hardcode the footer year to 2019, and leave a <code>&lt;!-- TODO: fix this later --&gt;</code> somewhere in index.html.</p></div>
+      <div class="step"><p>Run <code>/review</code>. Watch it read your uncommitted changes and catch both plants - usually with a politely raised eyebrow.</p></div>
+      <div class="step"><p>Let Codex fix what the review found, then commit clean. Sloppiness in, review, cleanliness out - that's the pipeline you just felt work.</p></div>
+      <div class="step"><p>Say the rule together: <strong>nothing gets committed without a review.</strong> It's 30 seconds. It's the habit.</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Why sabotage on purpose?</strong>
+      Because seeing /review catch a mistake you KNOW is there builds trust faster than any claim about what it might catch. Now you've watched it work - you'll believe it on the mistakes you don't know about.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3 · the moment</span>
+      <h2>Push, enable Pages, open YOUR live URL <span class="tag demo">★ 10 min · everyone ships</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Run the go-live prompt from Part 3: create the public repo (gh CLI or web flow), connect, push. Confirm the repo name when Codex asks.</p></div>
+      <div class="step"><p>On github.com: Settings → Pages → deploy from branch → main, root → Save. Then watch the build tick for a minute - the longest minute of the course.</p></div>
+      <div class="step"><p>Open the URL. Not on your laptop - <strong>on your phone.</strong> That's your site, on the actual internet, reachable by anyone alive.</p></div>
+      <div class="step"><p>Screenshot it. You built and shipped a website. Four sessions ago you were installing a CLI.</p></div>
+    </div>
+    <div class="callout win">
+      <strong>★ Mark the moment</strong>
+      Every cohort goes quiet right here, then loud. Send the screenshot somewhere - the course chat, a friend, your feed. Shipping in public is the whole point of a personal site, and it starts now.
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Make one real update through the full loop:</strong> edit something on the site → /review → commit → push → watch it go live. The loop has to run once without a safety net of session energy.</li>
+      <li><strong>Send the URL to three people.</strong> Not "when it's perfect" - now. Their reactions are Session 6 fuel, and perfect never ships.</li>
+      <li><strong>Optional:</strong> buy the custom domain and wire the CNAME (Part 3 self-study card). Codex handles the DNS spelling.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · Why run /review BEFORE committing, not after?</p>
+      <button class="qopt" type="button">A · /review only works on uncommitted changes, so there's no choice</button>
+      <button class="qopt" type="button">B · Catching bugs and leftovers while the fix is free beats catching them after they're in history - or live on your site</button>
+      <button class="qopt" type="button">C · Committing first would confuse git</button>
+      <p class="qwhy">Review sits before commit in the pipeline by design - it CAN review past commits too, but the cheap moment to fix a mistake is before it becomes history. Push is deploy, so committed sloppiness goes live.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · What does GitHub Pages need from your repo on a free account?</p>
+      <button class="qopt" type="button">A · A paid plan and a build server</button>
+      <button class="qopt" type="button">B · A special deploy folder and a config file</button>
+      <button class="qopt" type="button">C · A public repo, with Pages set to deploy from the main branch root</button>
+      <p class="qwhy">Public repo, Settings → Pages → deploy from branch → main, root ( / ). No servers, no config files - GitHub serves your committed files as-is.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · The update workflow for your live site, in order:</p>
+      <button class="qopt" type="button">A · Edit → /review → commit → push - live in about a minute</button>
+      <button class="qopt" type="button">B · Push → edit → commit → /review - review confirms what shipped</button>
+      <button class="qopt" type="button">C · Edit → push → commit → re-enable Pages each time</button>
+      <p class="qwhy">Push IS deploy - no upload step, no redeploy button. Which is exactly why the review sits before the commit: whatever you push is what the world sees.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of OpenAI's code review documentation and the CLI's git and review workflows - docs at <a href="https://learn.chatgpt.com/docs">learn.chatgpt.com</a> and free courses at <a href="https://academy.openai.com">OpenAI Academy</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Code review (official docs)</span><span class="note">/review on uncommitted changes and commits + @codex / automatic PR reviews on GitHub - Part 2, Demo 2</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">CLI reference: git &amp; review workflows (official docs)</span><span class="note">Codex-driven init/commit/push with explanations, diff narration - Parts 1-3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Quickstart-to-production path</span><span class="note">local folder → repo → GitHub Pages → live URL → push-is-deploy loop - Part 3, Demo 3</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 5 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>Git setup prompt</b><span>"Set up git: init, .gitignore, first commit with a clear message - explain each command before running it."</span></div>
+      <div class="cheat-item"><b>Diff habit</b><span>"Show me what changed and why before every commit." Nothing enters history unread.</span></div>
+      <div class="cheat-item"><b>Review rule</b><span>Nothing gets committed without /review. Catches bugs, leftovers, inconsistencies - 30 seconds, every time.</span></div>
+      <div class="cheat-item"><b>Team scale</b><span>Same habit on GitHub: @codex on a PR requests a review; automatic on repos where it's enabled.</span></div>
+      <div class="cheat-item"><b>Pages recipe</b><span>Public repo → push → Settings → Pages → deploy from main, root → wait ~1 min → live URL.</span></div>
+      <div class="cheat-item"><b>Update loop</b><span>Edit → /review → commit → push → live in a minute. Push IS deploy.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 5 of 6 · learn-codex-with-phoebe · by Phoebe Fu</span>
+    <span><a href="04-design-and-content.html">← Prev: Design and content</a> &nbsp;·&nbsp; <a href="../index.html">All sessions</a> &nbsp;·&nbsp; <a href="06-power-moves.html">Next: Power moves →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>

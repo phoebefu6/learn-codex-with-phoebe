@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>learn codex with phoebe - build a real website in six sessions</title>
+<link rel="stylesheet" href="assets/style.css?v=1">
+<style>
+  .stats-row { display: flex; gap: 2.4rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .stat b { display: block; font-size: 2.1rem; font-weight: 800; line-height: 1.05; font-variant-numeric: tabular-nums; }
+  .stat span { font-size: .72rem; opacity: .85; text-transform: uppercase; letter-spacing: .09em; font-weight: 600; }
+
+  .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .course-card {
+    border: 1px solid var(--hairline);
+    border-top: 4px solid var(--diff, var(--indigo));
+    border-radius: var(--radius);
+    padding: 1.2rem 1.3rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    text-decoration: none;
+    color: var(--ink);
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease, transform .15s ease;
+    position: relative;
+  }
+  .course-card:hover { border-color: var(--indigo-soft); border-top-color: var(--diff, var(--indigo)); box-shadow: 0 8px 28px rgba(16,163,127,.13); transform: translateY(-3px); }
+  .course-card .cicon { font-size: 1.7rem; line-height: 1; }
+  .course-card .cnum { font-size: .72rem; font-weight: 700; color: var(--indigo); text-transform: uppercase; letter-spacing: .1em; }
+  .course-card h3 { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+  .course-card p { font-size: .85rem; color: var(--muted); flex: 1; }
+  .course-card .meta { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+  .diff-legend { display: flex; gap: 1rem; margin-top: 1.6rem; font-size: .74rem; color: var(--muted); font-weight: 600; flex-wrap: wrap; }
+  .diff-legend i { display: inline-block; width: .85rem; height: .35rem; border-radius: 999px; margin-right: .35rem; vertical-align: middle; }
+
+  .paths { margin-top: 2.6rem; }
+  .paths h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .3rem; }
+  .paths .plede { color: var(--muted); font-size: .92rem; margin-bottom: .8rem; }
+  .path { display: flex; gap: .55rem; align-items: center; padding: .75rem 0; border-bottom: .5px solid var(--hairline); flex-wrap: wrap; }
+  .path:last-child { border-bottom: none; }
+  .path b { min-width: 16.5rem; font-size: .9rem; }
+  .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
+  .path .pstep:hover { background: var(--indigo); color: #fff; }
+  .path .parr { color: var(--faint); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe</div>
+    <h1>Build a real website, learn a real agent</h1>
+    <p class="sub">Six 45-minute sessions with OpenAI's Codex, on a regular ChatGPT Plus subscription. No frameworks, no fluff: by Session 5 your personal site - about, showcase, ideas - is live on the internet, and you know exactly how it got there.</p>
+    <div class="stats-row">
+      <div class="stat"><b data-count="6">6</b><span>sessions</span></div>
+      <div class="stat"><b data-count="1">1</b><span>real website shipped</span></div>
+      <div class="stat"><b data-count="45">45</b><span>min per session</span></div>
+      <div class="stat"><b data-count="20">20</b><span>$/mo plan is enough</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="section">
+    <div class="course-grid">
+      <a class="course-card" href="courses/01-meet-codex.html" style="--diff:#34D399">
+        <span class="cicon">🧭</span>
+        <span class="cnum">Session 1 · easiest</span>
+        <h3>Meet Codex: your AI engineering teammate</h3>
+        <p>What an agent actually is, setup on your Plus plan, the GCOB prompting structure - and your site plan, written today.</p>
+        <span class="meta"><span class="pill amber">▶ Start here</span><span class="pill light">No terminal experience needed</span></span>
+      </a>
+      <a class="course-card" href="courses/02-first-build.html" style="--diff:#34D399">
+        <span class="cicon">🏗️</span>
+        <span class="cnum">Session 2 · easy</span>
+        <h3>First build: from plan to homepage</h3>
+        <p>The build loop becomes muscle memory: AGENTS.md, a working homepage from your plan, and three iteration laps.</p>
+        <span class="meta"><span class="pill light">Bring Session 1's plan</span></span>
+      </a>
+      <a class="course-card" href="courses/03-agents-and-skills.html" style="--diff:#FBBF24">
+        <span class="cicon">🧰</span>
+        <span class="cnum">Session 3 · medium</span>
+        <h3>AGENTS.md and skills: your taste, encoded</h3>
+        <p>Stop re-explaining your standards. Encode them once - design system and content voice as skills Codex applies automatically.</p>
+        <span class="meta"><span class="pill light">The power-user unlock</span></span>
+      </a>
+      <a class="course-card" href="courses/04-design-and-content.html" style="--diff:#FBBF24">
+        <span class="cicon">🎨</span>
+        <span class="cnum">Session 4 · medium</span>
+        <h3>Design and content: make it yours</h3>
+        <p>Your real bio, real projects, real ideas - built into pages, polished with critique loops, checked for mobile and accessibility.</p>
+        <span class="meta"><span class="pill light">Bring your notes file</span></span>
+      </a>
+      <a class="course-card" href="courses/05-ship-it.html" style="--diff:#FB923C">
+        <span class="cicon">🚀</span>
+        <span class="cnum">Session 5 · hard</span>
+        <h3>Ship it: git, review, and going live</h3>
+        <p>Git without the trauma, the /review habit, GitHub Pages - and your live URL, open on your phone before the session ends.</p>
+        <span class="meta"><span class="pill light">GitHub account required</span></span>
+      </a>
+      <a class="course-card" href="courses/06-power-moves.html" style="--diff:#F87171">
+        <span class="cicon">⚡</span>
+        <span class="cnum">Session 6 · hardest</span>
+        <h3>Power moves: automation, cloud, and beyond</h3>
+        <p>codex exec in scripts, cloud tasks that work while your laptop sleeps, MCP connections - and your weekly maintenance playbook.</p>
+        <span class="meta"><span class="pill light">The finale</span></span>
+      </a>
+    </div>
+    <div class="diff-legend">
+      <span><i style="background:#34D399"></i>easy - everyone</span>
+      <span><i style="background:#FBBF24"></i>medium - hands-on</span>
+      <span><i style="background:#FB923C"></i>hard - shipping</span>
+      <span><i style="background:#F87171"></i>hardest - automation</span>
+    </div>
+
+    <div class="paths">
+      <h2>Choose your path 🗺️</h2>
+      <p class="plede">Everyone starts at Session 1. The sequence is the course - but the pace is yours.</p>
+      <div class="path"><b>🧑‍💻 Never touched a terminal</b>
+        <a class="pstep" href="courses/01-meet-codex.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-first-build.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-design-and-content.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-ship-it.html">5</a><span class="parr">→</span>
+        <span style="font-size:.8rem;color:var(--muted)">use the desktop app everywhere - it all works</span>
+      </div>
+      <div class="path"><b>⚡ Developer in a hurry</b>
+        <a class="pstep" href="courses/01-meet-codex.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-agents-and-skills.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-ship-it.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-power-moves.html">6</a>
+      </div>
+      <div class="path"><b>🌱 The full journey (recommended)</b>
+        <a class="pstep" href="courses/01-meet-codex.html">1</a><span class="parr">→</span>
+        <a class="pstep" href="courses/02-first-build.html">2</a><span class="parr">→</span>
+        <a class="pstep" href="courses/03-agents-and-skills.html">3</a><span class="parr">→</span>
+        <a class="pstep" href="courses/04-design-and-content.html">4</a><span class="parr">→</span>
+        <a class="pstep" href="courses/05-ship-it.html">5</a><span class="parr">→</span>
+        <a class="pstep" href="courses/06-power-moves.html">6</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>learn-codex-with-phoebe · by Phoebe Fu · sources: <a href="https://learn.chatgpt.com/docs">official Codex docs</a> + <a href="https://academy.openai.com">OpenAI Academy</a> · sibling course: <a href="https://phoebefu6.github.io/learn-claude-with-phoebe/">learn-claude-with-phoebe</a></span>
+  </footer>
+</main>
+
+<script src="assets/app.js?v=1"></script>
+</body>
+</html>

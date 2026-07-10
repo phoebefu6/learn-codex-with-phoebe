@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 1 · Meet Codex: your AI engineering teammate - learn codex with phoebe</title>
+<link rel="stylesheet" href="../assets/style.css?v=1">
+</head>
+<body>
+
+<div class="toolbar">
+  <div class="wrap">
+    <span class="crumb"><a href="../index.html">learn-codex-with-phoebe</a> / Session 1 of 6</span>
+    <button class="btn" id="toggle-all" type="button">Expand all</button>
+    <button class="btn primary" id="zoom-toggle" type="button">Projector zoom: off</button>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">Learn Codex with Phoebe · Session 1 of 6</div>
+    <h1>Meet Codex: <span class="accent">your AI engineering teammate</span></h1>
+    <p class="sub">What Codex actually is, how to set it up on a regular ChatGPT Plus subscription, and the one prompting structure that makes it work. By Session 6, you'll have built and shipped a real personal website with it - starting today.</p>
+    <div class="chip-row">
+      <span class="chip level">🟢 Easiest</span>
+      <span class="chip audience">Builders</span>
+      <span class="chip audience">Non-engineers welcome</span>
+      <span class="chip time">45 min live + self-study</span>
+    </div>
+    <div class="agenda">
+      <span class="a1" style="flex:1">0-3 · Welcome</span>
+      <span class="a2" style="flex:3">3-18 · Concepts</span>
+      <span class="a3" style="flex:5">18-40 · Setup &amp; first run</span>
+      <span class="a4" style="flex:1">40-45 · Q&amp;A</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ============ INTRO ============ -->
+  <section class="section" id="intro">
+    <div class="section-kicker">
+      <span class="klabel">Part 0</span>
+      <h2>Why this course exists</h2>
+    </div>
+    <p class="lede">Everyone has a half-finished personal website in their head: an about page, the things you've built, the ideas you keep meaning to write down. This course gets it out of your head and onto the internet - built from scratch WITH Codex, OpenAI's coding agent, on nothing more than a personal ChatGPT Plus subscription. Six sessions, one real shipped website, and a working command of the tool by the end.</p>
+    <div class="legend">
+      <span class="pill solid">Live - presented in session</span>
+      <span class="pill light">Self-study - read after class</span>
+      <span class="pill amber">★ Build-along demo</span>
+      <span class="pill inkpill">The project: YOUR website</span>
+    </div>
+    <div class="callout win">
+      <strong>★ What you walk out with today</strong>
+      Codex installed and signed in on your machine, your project folder created, a site plan written by you and Codex together - and the GCOB prompting structure you'll use in every session after this one.
+    </div>
+  </section>
+
+  <!-- ============ PART 1: WHAT CODEX IS ============ -->
+  <section class="section" id="what-codex-is">
+    <div class="section-kicker">
+      <span class="klabel">Part 1 · covers "intro to codex" + "codex 101"</span>
+      <h2>What Codex actually is <span class="tag concept">6 min live</span></h2>
+    </div>
+    <p class="lede">Codex is an agent: you give it a goal, it gathers context, takes action in your files, and produces something real - code written, tests run, changes reviewed. One agent, five doors to reach it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Codex: one agent, five surfaces - desktop app, CLI, IDE extension, cloud, code review">
+        <style>
+          .cxT { font: 700 15px Inter, sans-serif; fill: #FFFFFF; }
+          .cxS { font: 400 12.5px Inter, sans-serif; fill: #FFFFFF; opacity: .88; }
+          .cxI { font: 600 13px Inter, sans-serif; fill: #202123; }
+          .cxX { font: 400 12.5px Inter, sans-serif; fill: #6E6E80; }
+          .cxA { stroke: #C5C5D2; stroke-width: 2; fill: none; }
+        </style>
+        <rect x="330" y="105" width="220" height="90" rx="14" fill="#10A37F"/>
+        <text class="cxT" x="382" y="140">The Codex agent</text>
+        <text class="cxS" x="352" y="164">goal → context → action →</text>
+        <text class="cxS" x="352" y="182">something real, verified</text>
+        <line class="cxA" x1="330" y1="150" x2="215" y2="60"/>
+        <line class="cxA" x1="330" y1="150" x2="215" y2="150"/>
+        <line class="cxA" x1="330" y1="150" x2="215" y2="245"/>
+        <line class="cxA" x1="550" y1="150" x2="665" y2="90"/>
+        <line class="cxA" x1="550" y1="150" x2="665" y2="215"/>
+        <rect x="30" y="30" width="185" height="52" rx="10" fill="#0A6B54"/>
+        <text class="cxT" x="48" y="52" style="font-size:13.5px">🖥️ Desktop app</text>
+        <text class="cxS" x="48" y="70" style="font-size:11.5px">Codex mode on a folder</text>
+        <rect x="30" y="124" width="185" height="52" rx="10" fill="#0A6B54"/>
+        <text class="cxT" x="48" y="146" style="font-size:13.5px">⌨️ Codex CLI</text>
+        <text class="cxS" x="48" y="164" style="font-size:11.5px">the terminal - our home base</text>
+        <rect x="30" y="219" width="185" height="52" rx="10" fill="#0A6B54"/>
+        <text class="cxT" x="48" y="241" style="font-size:13.5px">🧩 IDE extension</text>
+        <text class="cxS" x="48" y="259" style="font-size:11.5px">inside VS Code</text>
+        <rect x="665" y="64" width="185" height="52" rx="10" fill="#2FBF96"/>
+        <text class="cxT" x="683" y="86" style="font-size:13.5px">☁️ Codex cloud</text>
+        <text class="cxS" x="683" y="104" style="font-size:11.5px">delegate tasks, work in parallel</text>
+        <rect x="665" y="189" width="185" height="52" rx="10" fill="#2FBF96"/>
+        <text class="cxT" x="683" y="211" style="font-size:13.5px">🔍 Code review</text>
+        <text class="cxS" x="683" y="229" style="font-size:11.5px">/review + GitHub PRs</text>
+        <text class="cxX" x="30" y="295">Same agent, same account, same AGENTS.md and skills everywhere - pick the door that fits the moment.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - one agent, five doors (this course lives mostly in the CLI)</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>An agent, not an autocomplete<span class="mini">3 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Codex is not a chat window that emits code snippets. It works like a junior engineer with a terminal: it reads your files, plans, writes code, RUNS it, reads the errors, fixes them, and shows you the result - looping until the goal is met or it needs your call. You review and steer; it does the labor.</p>
+        <ul>
+          <li><strong>It sees your project:</strong> point it at a folder and it explores the real files - no copy-pasting code into a chat box.</li>
+          <li><strong>It acts under your permissions:</strong> what it may read, write, and execute is a setting you control (Part 2), not a hope.</li>
+          <li><strong>It verifies:</strong> the habit that separates agents from autocomplete - it can run the thing it just built and check.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p><strong>The moment it clicks for most people:</strong> you type "the contact link is broken on mobile" - and instead of an explanation, Codex opens the file, finds the overlapping element, fixes the CSS, and shows you a diff. Ten seconds. That gap between "telling you about code" and "doing the work" is the entire product.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Which door when - the five surfaces<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <table class="clean">
+          <thead><tr><th>Surface</th><th>Reach for it when</th><th>In this course</th></tr></thead>
+          <tbody>
+            <tr><td>Codex CLI (terminal)</td><td>Building in a local folder - full control, fastest loop</td><td>Sessions 1-5, home base</td></tr>
+            <tr><td>Desktop app (Codex mode)</td><td>Same power, friendlier face - great if terminals feel hostile</td><td>Valid alternative throughout</td></tr>
+            <tr><td>IDE extension</td><td>You live in VS Code and want Codex beside the editor</td><td>Optional, Session 2 note</td></tr>
+            <tr><td>Codex cloud</td><td>Delegate a task and close the laptop; run tasks in parallel</td><td>Session 6</td></tr>
+            <tr><td>Code review</td><td>Check changes before they ship - /review locally, @codex on GitHub PRs</td><td>Session 5</td></tr>
+          </tbody>
+        </table>
+        <div class="callout tip">
+          <strong>Non-engineer in the room?</strong>
+          The desktop app's Codex mode does everything this course needs. Wherever a demo says "in the terminal", the app's chat box accepts the same words.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>Models, credits, and what Plus actually gets you<span class="mini">3 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Codex is included in every ChatGPT plan - Free through Enterprise. On <strong>Plus ($20/month)</strong>, usage is metered in 5-hour windows, and cloud tasks and code reviews share the same pool:</p>
+        <table class="clean">
+          <thead><tr><th>Model</th><th>Character</th><th>Plus: messages per 5-hr window</th></tr></thead>
+          <tbody>
+            <tr><td>GPT-5.6 Sol</td><td>Deepest reasoning - hard problems, gnarly bugs</td><td>~15-90</td></tr>
+            <tr><td>GPT-5.6 Terra</td><td>The balanced default - most work happens here</td><td>~20-110</td></tr>
+            <tr><td>GPT-5.6 Luna</td><td>Fast and light - quick edits, questions</td><td>~50-280</td></tr>
+            <tr><td>GPT-5.4 mini</td><td>Bulk simple tasks</td><td>~60-350</td></tr>
+          </tbody>
+        </table>
+        <ul>
+          <li><strong>Switch anytime</strong> with <code>/model</code> - model plus reasoning effort per task.</li>
+          <li><strong>The budget habit:</strong> default to Terra; reach for Sol when genuinely stuck; drop to Luna for small edits. Ranges are wide because message cost scales with how much thinking a task needs.</li>
+          <li><strong>Hit the ceiling?</strong> Plus users can buy extra credits, or simply wait for the window to reset. For this course's website project, Plus limits are comfortable - a session's build fits well inside one window.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 2: SETUP ============ -->
+  <section class="section" id="setup">
+    <div class="section-kicker">
+      <span class="klabel">Part 2 · covers the quickstart + permissions docs</span>
+      <h2>Setup on your Plus plan <span class="tag concept">5 min live</span></h2>
+    </div>
+    <p class="lede">Two minutes of installing, one sign-in, one decision about permissions. That's the whole barrier to entry.</p>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>Install and sign in<span class="mini">2 min · then Demo 1</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="prompt-box good"><span class="label">★ Install the CLI (pick one)</span># macOS / Linux - official installer
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+
+# or via npm
+npm install -g @openai/codex
+
+# or Homebrew (macOS)
+brew install --cask codex
+
+# then, from any project folder:
+codex
+# → sign in with your ChatGPT account when prompted. Done.</div>
+        <p>Signing in with ChatGPT links Codex to your Plus plan - no API key, no billing setup, nothing else to configure. The desktop app route is even shorter: install the ChatGPT app, open a folder, pick <strong>Codex</strong> mode.</p>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode live">Live</span>Permissions - the safety dial<span class="mini">2 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <p>Codex acts under a permission gate you control with <code>/permissions</code>: from read-only (it can look, not touch) through auto-edit in the project folder, up to running commands with approval. Two rules carry you through this whole course:</p>
+        <ul>
+          <li><strong>Start where you're comfortable.</strong> Read-only on day one is a fine choice - promote it as trust builds. Approval prompts are a feature: every "may I run this?" is a chance to learn what it's doing.</li>
+          <li><strong>The sandbox is real:</strong> Codex works inside your project folder's boundary; it asks before going beyond. Your website project is a perfect training ground - nothing in it can hurt anything.</li>
+        </ul>
+        <div class="callout tip">
+          <strong>The habit that matters</strong>
+          When Codex asks to run a command you don't recognize, ask it "what does that command do?" before approving. It explains happily - and three of those explanations teach more terminal than most tutorials.
+        </div>
+      </div>
+    </details>
+
+    <details class="card">
+      <summary><span class="mode self">Self-study</span>The other doors: desktop app modes and the IDE extension<span class="mini">2 min read</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <ul>
+          <li><strong>Desktop app has three modes:</strong> Quick Chat (casual questions), Work (research, documents, analysis), and Codex (software work on a folder). Same account, same limits - mode just sets the working style.</li>
+          <li><strong>IDE extension:</strong> Codex inside VS Code, seeing your open editor context. Same agent; useful once you're editing the site by hand alongside it (Session 4 territory).</li>
+          <li><strong>Session continuity:</strong> <code>codex resume</code> picks up a previous conversation in the CLI - your project's context survives lunch.</li>
+          <li><strong>Everything shares your setup:</strong> the AGENTS.md and skills you'll build in Session 3 apply across CLI, app, and IDE automatically.</li>
+        </ul>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 3: GCOB ============ -->
+  <section class="section" id="gcob">
+    <div class="section-kicker">
+      <span class="klabel">Part 3 · covers the official prompting guide</span>
+      <h2>Talking to Codex: the GCOB structure <span class="tag concept">4 min live</span></h2>
+    </div>
+    <p class="lede">OpenAI's own guidance boils down to four elements. No syntax, no magic words - just four questions answered in plain language, then iteration.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 235" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GCOB prompt anatomy: goal, context, output, boundaries stack into one strong ask">
+        <style>
+          .gbW { font: 600 14px Inter, sans-serif; fill: #FFFFFF; }
+          .gbI { font: 600 14px Inter, sans-serif; fill: #202123; }
+          .gbB { font: 700 17px Inter, sans-serif; fill: #202123; }
+          .gbX { font: 400 13px Inter, sans-serif; fill: #6E6E80; }
+        </style>
+        <rect x="40" y="25" width="520" height="34" rx="8" fill="#0A6B54"/>
+        <text class="gbW" x="56" y="47">Goal - what should exist when you're done?</text>
+        <rect x="40" y="67" width="520" height="34" rx="8" fill="#10A37F"/>
+        <text class="gbW" x="56" y="89">Context - what does it need to know? (files, examples, taste)</text>
+        <rect x="40" y="109" width="520" height="34" rx="8" fill="#2FBF96"/>
+        <text class="gbW" x="56" y="131">Output - what form? (a page, a plan, a diff, a list of options)</text>
+        <rect x="40" y="151" width="520" height="34" rx="8" fill="#7DDFC3"/>
+        <text class="gbI" x="56" y="173">Boundaries - what must NOT change or happen?</text>
+        <line x1="590" y1="25" x2="590" y2="185" stroke="#C5C5D2" stroke-width="2"/>
+        <text class="gbB" x="612" y="95">= one strong ask</text>
+        <text class="gbX" x="612" y="120">then iterate in follow-ups -</text>
+        <text class="gbX" x="612" y="138">results over steps, always.</text>
+        <text class="gbX" x="40" y="215">Start with the result you want, not the steps to get there. Codex plans the steps - that's its job.</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - GCOB: the anatomy of a strong Codex ask</figcaption>
+    </figure>
+
+    <details class="card" open>
+      <summary><span class="mode live">Live</span>GCOB in action, plus the Codex-specific habits<span class="mini">4 min</span><span class="caret">▶</span></summary>
+      <div class="body">
+        <div class="prompt-box bad"><span class="label">Weak - steps, no goal</span>Make an index.html, add a header tag, then some CSS, use flexbox for...</div>
+        <div class="prompt-box good"><span class="label">Strong - GCOB</span>Goal: a clean one-page personal site skeleton I can grow into about/showcase/ideas sections.
+
+Context: I'm a data & AI leader building my personal site. I like editorial, minimal design - generous whitespace, one accent color, no template feel.
+
+Output: working HTML/CSS in this folder, plus a short note on how you structured it and why.
+
+Boundaries: no frameworks, no build step - plain HTML/CSS/JS I can read and learn from. Nothing goes online yet.</div>
+        <p>Three Codex-specific habits from the official guide, worth tattooing somewhere:</p>
+        <ul>
+          <li><strong>Bugs get reproduction steps:</strong> "the menu breaks when I resize below 400px" beats "menu is broken".</li>
+          <li><strong>Name your constraints:</strong> "minimal changes", "don't touch the design", "keep it readable for a beginner" - boundaries prevent enthusiastic rewrites.</li>
+          <li><strong>Ask for verification:</strong> end big asks with "then check it works and tell me how you verified". Agents that verify are agents you can trust.</li>
+        </ul>
+        <div class="callout example">
+          <span class="ex-pill">Real world</span>
+          <p>A first-timer's actual session: her first prompt was "make my website" - she got a generic template and hated it. Rewritten with GCOB (real goal, her taste in context, plain-code boundary), the second attempt was recognizably HERS. Same tool, same evening - the four questions were the difference.</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============ PART 4: THE PROJECT ============ -->
+  <section class="section" id="the-project">
+    <div class="section-kicker">
+      <span class="klabel">Part 4 · the running project</span>
+      <h2>One website, six sessions <span class="tag concept">3 min live</span></h2>
+    </div>
+    <p class="lede">Every session advances the same build. No toy exercises - by Session 5 this is live on the internet with your name on it.</p>
+
+    <figure class="zoomable">
+      <svg viewBox="0 0 880 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The six-session roadmap: setup, skeleton, standards, pages, ship, autopilot">
+        <style>
+          .rmT { font: 700 14px Inter, sans-serif; fill: #FFFFFF; }
+          .rmX { font: 400 12px Inter, sans-serif; fill: #6E6E80; }
+          .rmA { stroke: #C5C5D2; stroke-width: 2; fill: none; marker-end: url(#rmAh); }
+        </style>
+        <defs>
+          <marker id="rmAh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6" fill="none" stroke="#C5C5D2" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect x="20" y="55" width="120" height="46" rx="10" fill="#0A6B54"/>
+        <text class="rmT" x="38" y="83">1 · Setup</text>
+        <rect x="163" y="55" width="120" height="46" rx="10" fill="#10A37F"/>
+        <text class="rmT" x="176" y="83">2 · Skeleton</text>
+        <rect x="306" y="55" width="120" height="46" rx="10" fill="#10A37F"/>
+        <text class="rmT" x="316" y="83">3 · Standards</text>
+        <rect x="449" y="55" width="120" height="46" rx="10" fill="#2FBF96"/>
+        <text class="rmT" x="474" y="83">4 · Pages</text>
+        <rect x="592" y="55" width="120" height="46" rx="10" fill="#2FBF96"/>
+        <text class="rmT" x="622" y="83">5 · Ship</text>
+        <rect x="735" y="55" width="120" height="46" rx="10" fill="#202123"/>
+        <text class="rmT" x="748" y="83">6 · Autopilot</text>
+        <line class="rmA" x1="142" y1="78" x2="158" y2="78"/>
+        <line class="rmA" x1="285" y1="78" x2="301" y2="78"/>
+        <line class="rmA" x1="428" y1="78" x2="444" y2="78"/>
+        <line class="rmA" x1="571" y1="78" x2="587" y2="78"/>
+        <line class="rmA" x1="714" y1="78" x2="730" y2="78"/>
+        <text class="rmX" x="20" y="130">install, sign in,</text>
+        <text class="rmX" x="20" y="146">plan the site</text>
+        <text class="rmX" x="163" y="130">working homepage,</text>
+        <text class="rmX" x="163" y="146">the build loop</text>
+        <text class="rmX" x="306" y="130">AGENTS.md + skills:</text>
+        <text class="rmX" x="306" y="146">your taste, encoded</text>
+        <text class="rmX" x="449" y="130">about · showcase ·</text>
+        <text class="rmX" x="449" y="146">ideas, polished</text>
+        <text class="rmX" x="592" y="130">GitHub Pages, live</text>
+        <text class="rmX" x="592" y="146">URL, /review habit</text>
+        <text class="rmX" x="735" y="130">cloud tasks, exec,</text>
+        <text class="rmX" x="735" y="146">MCP, maintenance</text>
+        <text class="rmX" x="20" y="185">Miss a session? Each page stands alone, and the repo state you need is one Codex prompt away: "catch this project up to session N".</text>
+      </svg>
+      <figcaption>🔍 Click to zoom - the roadmap: one website, six sessions</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ DEMO 1 ============ -->
+  <section class="section" id="demo-1">
+    <div class="section-kicker">
+      <span class="klabel">Demo 1 of 3</span>
+      <h2>Install, sign in, first conversation <span class="tag demo">★ 8 min · everyone installs</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Run the installer (Part 2 box) - or install the ChatGPT desktop app if you're going the no-terminal route.</p></div>
+      <div class="step"><p>Make the project folder: <code>mkdir my-site &amp;&amp; cd my-site</code> - then run <code>codex</code> and sign in with your ChatGPT account.</p></div>
+      <div class="step"><p>First conversation, no stakes: <strong>"Introduce yourself - what can you do in this empty folder, and what do you need from me to be useful?"</strong> Read the answer; it's a better feature tour than any slide.</p></div>
+      <div class="step"><p>Run <code>/status</code> - see your model, permissions, and folder. Then <code>/model</code> - look at the options, leave it on the default (Terra).</p></div>
+    </div>
+    <div class="callout tip">
+      <strong>Stuck on install?</strong>
+      Pair with a neighbor and keep going on their machine - fix yours after the session. The point today is the conversation, not the plumbing.
+    </div>
+  </section>
+
+  <!-- ============ DEMO 2 ============ -->
+  <section class="section" id="demo-2">
+    <div class="section-kicker">
+      <span class="klabel">Demo 2 of 3</span>
+      <h2>Plan YOUR site with GCOB <span class="tag demo">★ 10 min · everyone plans</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Two quiet minutes with pen and paper: what are your three sections? (Default: about / things I've built / ideas I'm chewing on. Rename them to sound like you.)</p></div>
+      <div class="step"><p>Write your first real GCOB prompt - use the Part 3 example as a skeleton, but the Goal and Context are yours. Ask for a PLAN, not code yet.</p></div>
+      <div class="step"><p>Run it: <strong>"...Output: write SITE_PLAN.md in this folder - sections, pages, what each contains, and the build order you'd suggest. Boundaries: plan only, no code yet, keep it under a page."</strong></p></div>
+      <div class="step"><p>Discernment lap: read SITE_PLAN.md, disagree with one thing out loud, and tell Codex to revise it. The plan is yours, not its.</p></div>
+      <div class="step"><p>Approve the plan. That file is Session 2's starting gun.</p></div>
+    </div>
+    <div class="callout example">
+      <span class="ex-pill">Real world</span>
+      <p>The revision moment is where ownership happens: "swap the blog for a shorter 'ideas' section - I'll write 200-word notes, not essays" turned a generic plan into one a real person would actually maintain. Codex is a great planner and a better listener.</p>
+    </div>
+  </section>
+
+  <!-- ============ DEMO 3 ============ -->
+  <section class="section" id="demo-3">
+    <div class="section-kicker">
+      <span class="klabel">Demo 3 of 3</span>
+      <h2>Feel the permission gate <span class="tag demo">★ 4 min · follow along</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step"><p>Ask Codex: <strong>"Create a README.md that describes this project in two sentences."</strong> Watch the approval prompt appear (unless you've already granted write access).</p></div>
+      <div class="step"><p>Before approving, ask: <strong>"What exactly will you write and where?"</strong> - see it explain itself. THEN approve.</p></div>
+      <div class="step"><p>Open <code>/permissions</code> and set the level you're comfortable keeping for this project. There's no wrong answer - only your answer.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ HOMEWORK ============ -->
+  <section class="section" id="exercise">
+    <div class="section-kicker">
+      <span class="klabel">After the session</span>
+      <h2>This week <span class="tag exercise">◐ 30 min total</span></h2>
+    </div>
+    <ul>
+      <li><strong>Finish your SITE_PLAN.md</strong> if the session ran short - it gates Session 2.</li>
+      <li><strong>Have three GCOB conversations</strong> with Codex about anything ("Goal: understand what's in my Downloads folder..."). The structure has to become reflex.</li>
+      <li><strong>Gather your raw material:</strong> a short bio, 3-5 things you've built or shipped (a line each), 2-3 ideas you'd write about. Plain text in a notes file - Session 4 turns it into pages.</li>
+      <li><strong>Optional:</strong> watch OpenAI Academy's "Codex for Beginners" video - this session covered its content, but seeing the live-drive texture helps.</li>
+    </ul>
+  </section>
+
+  <!-- ============ QUIZ ============ -->
+  <section class="section" id="quiz">
+    <div class="section-kicker">
+      <span class="klabel">Check yourself</span>
+      <h2>Three questions before you go 🎯 <span class="tag exercise">◐ 90 seconds</span></h2>
+    </div>
+    <div class="quiz-q" data-answer="1">
+      <p class="qtext">1 · What makes Codex different from a chat window that writes code snippets?</p>
+      <button class="qopt" type="button">A · It uses a bigger model</button>
+      <button class="qopt" type="button">B · It acts: reads your files, runs code, checks results - loops until done, under your permissions</button>
+      <button class="qopt" type="button">C · It's faster at typing</button>
+      <p class="qwhy">Agent, not autocomplete: the gap between "telling you about code" and "doing the work" is the whole product.</p>
+    </div>
+    <div class="quiz-q" data-answer="2">
+      <p class="qtext">2 · The GCOB elements are...</p>
+      <button class="qopt" type="button">A · Grammar, code, output, brevity</button>
+      <button class="qopt" type="button">B · Goal, commands, order, backup</button>
+      <button class="qopt" type="button">C · Goal, context, output, boundaries</button>
+      <p class="qwhy">Four plain-language questions from OpenAI's own guide - then iterate in follow-ups. Results over steps, always.</p>
+    </div>
+    <div class="quiz-q" data-answer="0">
+      <p class="qtext">3 · Codex asks to run a command you don't recognize. Best move?</p>
+      <button class="qopt" type="button">A · Ask "what does that command do?" - then decide</button>
+      <button class="qopt" type="button">B · Always approve - it knows best</button>
+      <button class="qopt" type="button">C · Always deny - safety first</button>
+      <p class="qwhy">The approval prompt is a feature and a free terminal lesson. Understand, then decide - trust is built, not granted.</p>
+    </div>
+    <p class="quiz-score"></p>
+  </section>
+
+  <!-- ============ OFFICIAL SOURCES ============ -->
+  <section class="section" id="official">
+    <div class="section-kicker">
+      <span class="klabel">Source material</span>
+      <h2>Official sources covered</h2>
+    </div>
+    <p class="lede">This session teaches the working content of OpenAI's official onboarding materials - docs at <a href="https://learn.chatgpt.com/docs">learn.chatgpt.com</a> and free courses at <a href="https://academy.openai.com">OpenAI Academy</a>.</p>
+    <div class="covered">
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Codex quickstart (official docs)</span><span class="note">install, sign-in, first run - Parts 1-2 + Demo 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Prompting guide (official docs)</span><span class="note">the GCOB structure + Codex-specific habits - Part 3</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Models &amp; pricing (official docs)</span><span class="note">Sol/Terra/Luna, Plus limits, credits - Part 1</span></div>
+      <div class="covered-row"><span class="status pill solid">✓</span><span class="name">Intro to Codex + Codex for Beginners (OpenAI Academy)</span><span class="note">agent concept, surfaces, onboarding - Parts 1-2</span></div>
+      <div class="covered-row"><span class="status pill light">◐</span><span class="name">Permissions (official docs)</span><span class="note">working level here; full depth with sandbox details in Session 2</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CHEAT SHEET ============ -->
+  <section class="cheat" id="cheatsheet">
+    <h3>Session 1 cheat sheet <span>· pin this</span></h3>
+    <div class="grid-2">
+      <div class="cheat-item"><b>What Codex is</b><span>An agent: goal → context → action → verified result. Five doors, one agent - CLI is home base.</span></div>
+      <div class="cheat-item"><b>Install</b><span>curl -fsSL https://chatgpt.com/codex/install.sh | sh, then `codex` + sign in with ChatGPT. Done.</span></div>
+      <div class="cheat-item"><b>GCOB</b><span>Goal · Context · Output · Boundaries. Results over steps. Iterate in follow-ups.</span></div>
+      <div class="cheat-item"><b>Key commands</b><span>/status · /model · /permissions · /init (Session 2) · /review (Session 5) · codex resume.</span></div>
+      <div class="cheat-item"><b>Model habit</b><span>Terra by default · Sol when stuck · Luna for quick edits. Plus meters per 5-hr window.</span></div>
+      <div class="cheat-item"><b>Trust habit</b><span>Unknown command in approval prompt? Ask "what does that do?" first. Every prompt is a lesson.</span></div>
+    </div>
+  </section>
+
+  <footer class="pagefoot">
+    <span>Session 1 of 6 · learn-codex-with-phoebe · by Phoebe Fu</span>
+    <span><a href="../index.html">← All sessions</a> &nbsp;·&nbsp; <a href="02-first-build.html">Next: First build →</a></span>
+  </footer>
+
+</main>
+
+<script src="../assets/app.js?v=1"></script>
+</body>
+</html>
