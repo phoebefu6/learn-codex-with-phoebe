@@ -44,6 +44,17 @@
   .path .pstep { background: var(--indigo-50); color: var(--indigo); border-radius: 999px; padding: .16rem .68rem; font-weight: 700; font-size: .8rem; text-decoration: none; transition: all .12s ease; }
   .path .pstep:hover { background: var(--indigo); color: #fff; }
   .path .parr { color: var(--faint); font-weight: 700; }
+
+  .mm-section { margin-top: 1.6rem; }
+  .mm-section h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: .2rem; }
+  .mm-section .mm-lede { color: var(--muted); font-size: .92rem; margin-bottom: .4rem; }
+  .mm-wrap { border: 1px solid var(--hairline); border-radius: var(--radius); background: linear-gradient(180deg,#fff, #F6FAFD); padding: .6rem; overflow-x: auto; }
+  .mm-svg { width: 100%; height: auto; display: block; max-width: 60rem; margin: 0 auto; min-width: 34rem; }
+  .mm-link { cursor: pointer; text-decoration: none; }
+  .mm-node rect { transition: opacity .15s ease, filter .15s ease; }
+  .mm-node text { pointer-events: none; }
+  .mm-link:hover .mm-node rect { filter: brightness(1.06); }
+  .mm-edge { transition: opacity .15s ease; }
 </style>
 </head>
 <body>
@@ -63,6 +74,12 @@
 </header>
 
 <main class="wrap">
+  <section class="section mm-section">
+    <h2>The knowledge map 🧠</h2>
+    <p class="mm-lede">The whole course at a glance - hover a session to spotlight its concepts, click any node to jump in.</p>
+    <div class="mm-wrap"><div id="mindmap"></div></div>
+  </section>
+
   <section class="section">
     <div class="course-grid">
       <a class="course-card" href="courses/01-meet-codex.html" style="--diff:#34D399">
@@ -147,6 +164,45 @@
   </footer>
 </main>
 
+<script>
+window.MINDMAP_DATA = {
+  title: "OpenAI\nCodex",
+  centerColor: "#0A6B54",
+  sessions: [
+    { label: "Meet\nCodex", href: "courses/01-meet-codex.html", color: "#34D399",
+      concepts: [
+        { label: "What is an agent", href: "courses/01-meet-codex.html" },
+        { label: "Setup on Plus", href: "courses/01-meet-codex.html" },
+        { label: "GCOB prompting", href: "courses/01-meet-codex.html" } ] },
+    { label: "First\nbuild", href: "courses/02-first-build.html", color: "#34D399",
+      concepts: [
+        { label: "The build loop", href: "courses/02-first-build.html" },
+        { label: "AGENTS.md", href: "courses/02-first-build.html" },
+        { label: "Iteration laps", href: "courses/02-first-build.html" } ] },
+    { label: "AGENTS.md\n& skills", href: "courses/03-agents-and-skills.html", color: "#FBBF24",
+      concepts: [
+        { label: "Personalization", href: "courses/03-agents-and-skills.html" },
+        { label: "Build skills", href: "courses/03-agents-and-skills.html" },
+        { label: "Encoded taste", href: "courses/03-agents-and-skills.html" } ] },
+    { label: "Design &\ncontent", href: "courses/04-design-and-content.html", color: "#FBBF24",
+      concepts: [
+        { label: "Notes to pages", href: "courses/04-design-and-content.html" },
+        { label: "Polish loop", href: "courses/04-design-and-content.html" },
+        { label: "Mobile & a11y", href: "courses/04-design-and-content.html" } ] },
+    { label: "Ship it:\ngo live", href: "courses/05-ship-it.html", color: "#FB923C",
+      concepts: [
+        { label: "Git basics", href: "courses/05-ship-it.html" },
+        { label: "The review habit", href: "courses/05-ship-it.html" },
+        { label: "GitHub Pages", href: "courses/05-ship-it.html" } ] },
+    { label: "Power\nmoves", href: "courses/06-power-moves.html", color: "#F87171",
+      concepts: [
+        { label: "codex exec", href: "courses/06-power-moves.html" },
+        { label: "Cloud tasks", href: "courses/06-power-moves.html" },
+        { label: "MCP connections", href: "courses/06-power-moves.html" } ] }
+  ]
+};
+</script>
+<script src="assets/mindmap.js?v=1"></script>
 <script src="assets/app.js?v=1"></script>
 </body>
 </html>
