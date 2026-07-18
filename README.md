@@ -1,3 +1,8 @@
+<!-- learn-with-phoebe hub banner -->
+> ### 📚 Part of [**Learn with Phoebe**](https://phoebefu6.github.io/learn-with-phoebe/)
+> The shelf of 20 free, hands-on courses on AI, data, and the craft around them. **[Browse every course ↗](https://phoebefu6.github.io/learn-with-phoebe/)**
+<!-- /learn-with-phoebe hub banner -->
+
 # learn-codex-with-phoebe
 
 Six 45-minute sessions with OpenAI's Codex, on a regular ChatGPT Plus subscription. The course has one running project: by Session 5, your personal website - about, product showcase, ideas - is live on GitHub Pages, built from scratch with Codex, and you understand every step that got it there.
