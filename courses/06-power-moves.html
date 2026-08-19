@@ -105,7 +105,42 @@ Boundaries: use only free, standard GitHub Actions features. Don't touch any oth
     <details class="card">
       <summary><span class="mode self">Self-study</span>exec vs interactive - the decision in one table<span class="mini">2 min read</span><span class="caret">▶</span></summary>
       <div class="body">
-        <table class="clean">
+        
+<figure class="zoomable">
+  <svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A decision tree for choosing codex exec over interactive codex: a fully specified, repeatable task goes to exec for weekly checks, CI gates, and audit sweeps, while an unspecified or taste-driven task stays interactive for steering and debugging.">
+    <style>
+      .p6aT { font: 700 13px Inter, sans-serif; fill: #202123; }
+      .p6aQ { font: 700 12px Inter, sans-serif; fill: #202123; }
+      .p6aO { font: 700 12px Inter, sans-serif; fill: #FFFFFF; }
+      .p6aS { font: 400 10.5px Inter, sans-serif; fill: rgba(255,255,255,.86); }
+      .p6aE { font: 700 11px Inter, sans-serif; fill: #6E6E80; }
+      .p6aN { font: 400 12px Inter, sans-serif; fill: #6E6E80; }
+    </style>
+    <rect x="0" y="0" width="880" height="340" fill="#FFFFFF"/>
+    <text class="p6aT" x="40" y="28">exec or interactive: the decision in one tree</text>
+
+    <rect x="40" y="142" width="240" height="56" rx="10" fill="#E7F6F1" stroke="#10A37F" stroke-width="1.5"/>
+    <text class="p6aQ" x="58" y="176">Fully specified, repeatable?</text>
+
+    <rect x="640" y="60" width="200" height="70" rx="10" fill="#10A37F"/>
+    <text class="p6aO" x="658" y="90">CODEX EXEC</text>
+    <text class="p6aS" x="658" y="107">weekly checks, CI, audits</text>
+
+    <rect x="640" y="210" width="200" height="70" rx="10" fill="#6E6E80"/>
+    <text class="p6aO" x="658" y="240">INTERACTIVE CODEX</text>
+    <text class="p6aS" x="658" y="257">taste, steering, debugging</text>
+
+    <path d="M280,170 L640,95" fill="none" stroke="#10A37F" stroke-width="1.6"/>
+    <text class="p6aE" x="460" y="126" text-anchor="middle">yes</text>
+
+    <path d="M280,170 L640,245" fill="none" stroke="#6E6E80" stroke-width="1.6"/>
+    <text class="p6aE" x="460" y="212" text-anchor="middle">no</text>
+
+    <text class="p6aN" x="40" y="316">Machines call exec for repeatable checks; weird problems still need a conversation.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - exec finds and repeats, interactive steers and debugs</figcaption>
+</figure>
+<table class="clean">
           <thead><tr><th>Situation</th><th>Reach for</th><th>Why</th></tr></thead>
           <tbody>
             <tr><td>Building something new, taste involved</td><td>Interactive <code>codex</code></td><td>You need to see, react, and steer mid-flight</td></tr>
@@ -181,7 +216,36 @@ Boundaries: use only free, standard GitHub Actions features. Don't touch any oth
     <details class="card">
       <summary><span class="mode live">Live</span>Cloud or local? The decision that matters<span class="mini">2 min</span><span class="caret">▶</span></summary>
       <div class="body">
-        <table class="clean">
+        
+<figure class="zoomable">
+  <svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two panels contrasting when to send a task to Codex cloud, for long self-contained tasks, parallel experiments, or when away from your machine, against staying local, for tight taste iteration, machine-only needs, or a fuzzy spec that needs conversation.">
+    <style>
+      .p6bT { font: 700 13px Inter, sans-serif; fill: #202123; }
+      .p6bH1 { font: 700 13px Inter, sans-serif; fill: #0A6B54; }
+      .p6bH2 { font: 700 13px Inter, sans-serif; fill: #202123; }
+      .p6bB { font: 400 12px Inter, sans-serif; fill: #202123; }
+      .p6bN { font: 400 12px Inter, sans-serif; fill: #6E6E80; }
+    </style>
+    <rect x="0" y="0" width="880" height="300" fill="#FFFFFF"/>
+    <text class="p6bT" x="40" y="28">Cloud or local? The decision that matters</text>
+
+    <rect x="40" y="50" width="390" height="180" rx="12" fill="#E7F6F1" stroke="#10A37F" stroke-width="1.5"/>
+    <text class="p6bH1" x="58" y="84">☁ GO CLOUD</text>
+    <text class="p6bB" x="58" y="114">Long, self-contained task</text>
+    <text class="p6bB" x="58" y="134">Parallel experiments racing</text>
+    <text class="p6bB" x="58" y="154">Away from your machine</text>
+
+    <rect x="450" y="50" width="390" height="180" rx="12" fill="#ECECF1" stroke="#6E6E80" stroke-width="1.5"/>
+    <text class="p6bH2" x="468" y="84">💻 STAY LOCAL</text>
+    <text class="p6bB" x="468" y="114">Iterating on taste, tight loop</text>
+    <text class="p6bB" x="468" y="134">Needs something only your machine has</text>
+    <text class="p6bB" x="468" y="154">Spec is fuzzy, needs conversation</text>
+
+    <text class="p6bN" x="40" y="276">Cloud tasks share your 5-hour usage window with regular messages - one pool, not three.</text>
+  </svg>
+  <figcaption>🔍 Click to zoom - go cloud when the task is specified, stay local when it's still fuzzy</figcaption>
+</figure>
+<table class="clean">
           <thead><tr><th>Go cloud when...</th><th>Stay local when...</th></tr></thead>
           <tbody>
             <tr><td>The task is long and self-contained ("add a 404 page matching the design system")</td><td>You're iterating on taste and want the tight see-react loop</td></tr>
